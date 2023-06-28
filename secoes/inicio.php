@@ -21,13 +21,13 @@
 <div id="carouselExampleInterval" class="carousel slide" data-bs-ride="carousel"><center>
   <div class="carousel-inner">
     <div class="carousel-item active" data-bs-interval="1000">
-      <img src="https://m.media-amazon.com/images/I/71IhMdsCniL._SX3000_.jpg" class="" style=" width: 85%; -webkit-mask-image: linear-gradient(to top, transparent 20%, white 70%);">
+      <img src="https://m.media-amazon.com/images/I/71IhMdsCniL._SX3000_.jpg" class="" style=" width: 100%; -webkit-mask-image: linear-gradient(to top, transparent 20%, white 70%);">
     </div>
     <div class="carousel-item" data-bs-interval="2000">
-      <img src="https://m.media-amazon.com/images/I/71EFWvNGjeL._SX3000_.jpg" class=""  style=" width: 85%; -webkit-mask-image: linear-gradient(to top, transparent 20%, white 70%);">
+      <img src="https://m.media-amazon.com/images/I/71EFWvNGjeL._SX3000_.jpg" class=""  style=" width: 100%; -webkit-mask-image: linear-gradient(to top, transparent 20%, white 70%);">
     </div>
     <div class="carousel-item">
-      <img src="https://m.media-amazon.com/images/I/71+imcmNzFL._SX3000_.jpg" class=""  style=" width: 85%; -webkit-mask-image: linear-gradient(to top, transparent 20%, white 70%);">
+      <img src="https://m.media-amazon.com/images/I/71+imcmNzFL._SX3000_.jpg" class=""  style=" width: 100%; -webkit-mask-image: linear-gradient(to top, transparent 20%, white 70%);">
     </div>
   </div>
   <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="prev">
@@ -40,45 +40,12 @@
   </button>
 </center>
 </div>
+</div>
 
-<div class="espacoCardtres container-fluid">
-        <div class="personalizarCard row row-cols-1">
-            <div class="espacoCarddois col col-6 card mb-3 " style="max-width: 40%;">
-                <div class="row g-0">
-                    <div class="col-md-4">
-                    <img src="https://res.cloudinary.com/beleza-na-web/image/upload/w_1500,f_auto,fl_progressive,q_auto:eco,w_800/v1/imagens/product/87709/a22a899f-17b8-49ab-b621-189d41b25ef9-my-way-giorgio-armani-eau-de-parfum-perfume-feminino-90ml.png" class="img-fluid rounded-start" alt="...">
-                    </div>
-                    <div class="col-md-8">
-                    <div class="card-body">
-                        <h5 class="card-title">Oferta do dias das mães</h5>
-                        <p class="card-text">Dia das Mães: presentes por categoria</p>
-                        <p class="card-text"><small class="text-body-secondary"><a href="">veja os produtos</a></small></p>
-                    </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="espacoCarddois col card mb-3" style="max-width: 40%;">
-                <div class="row g-0">
-                    <div class="col-md-4">
-                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQOllWAR_Sk96lKtzyr6yzhW9RuGoijqEkhv0sfJfym2KAWmce5damBo8y7e1Ra0Y8YF9w&usqp=CAU" class="img-fluid rounded-start" alt="...">
-                    </div>
-                    <div class="col-md-8">
-                    <div class="card-body">
-                        <h5 class="card-title">Curta suas músicas favoritas</h5>
-                        <p class="card-text">baixe o amazon music e aproveite!</p>
-                        <p class="card-text"><small class="text-body-secondary"><a href="">veja mais sobre..</a></small></p>
-                    </div>
-                    </div>
-                </div>
-            </div>
-
-        </div>
- </div>
    
 
-    <div class="espacoCard container-fluid">
-        <div class="row row-cols-1">
+    <div  class="container" >
+        <div class="row row-cols-2 row-cols-md-3 row-cols-lg-4 g-4">
 
  
         <?php
@@ -90,24 +57,24 @@
             while($row = @mysqli_fetch_array($resultado, MYSQLI_ASSOC)){
         ?>
         
+            <div class="col">
+                <div class="card h-20" >
+                    <img src="<?=$row['img'];?>"  style="object-fit: contain; width: 100%; height:280px;">
 
-            <div class="col card" style="width: 25rem; margin-left: 15px;">
-                <div class="card-img" style="width: 100%; height: 370px;" >
-                    <img src="<?=$row['img'];?>"  style="object-fit: contain; width: 100%; height: 100%">
-                </div>
-                <div class="card-body">
-                    <p class="card-text">Descrição: <?=$row['descricao'];?></p>
-                    <p class="card-text">Preço: <?=$row['valor'];?>,00 R$</p>
-                    <p class="card-text">qtn: <?=$row['quantidade'];?></p>
-                    <form action="">
-                        <input type="submit" class="btn btn-primary" name="vender" value="Comprar">
-                    </form>
+                    <div class="card-body" style="width: 100%;">
+                        <p class="card-text text-truncate">Descrição: <?=$row['descricao'];?></p>
+                        <p class="card-text text-truncate">Preço: <?=$row['valor'];?>,00 R$</p>
+                        <p class="card-text text-truncate">qtn: <?=$row['quantidade'];?></p>
+                        <form action="">
+                            <input type="submit" class="btn btn-primary" name="vender" value="Comprar">
+                        </form>
+                    </div>
                 </div>
             </div>
-        
         <?php
             }
         ?>
         </div>
-    </div>
 
+
+ </div>
