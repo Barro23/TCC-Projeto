@@ -4,7 +4,7 @@
 
 
 
-<footer class="container text-center">
+
   
 
     <nav class="colorRodape navbar navbar-expand-lg bg-body-tertiary">
@@ -17,9 +17,6 @@
   
     </nav>
 
-
-  </nav>
-</footer>
 
 
   

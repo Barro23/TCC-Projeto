@@ -15,9 +15,6 @@
     <script src='js/bootstrap.js'></script>
 </head>
 <body>
-    <header class="topo">
-        <?php include("includes/topo.php") ?>
-    </header>
     
     <nav class="colorMenu navbar navbar-expand-lg bg-body-tertiary">
         <?php include("includes/menu.php")?>
@@ -30,7 +27,7 @@
         ?>
     </section>
     <br/>
-    <footer  class="colorRodape navbar navbar-expand-lg bg-body-tertiary">
+    <footer  class="colorRodape container-fluid">
         <?php include("includes/rodape.php")?>
     </footer>
 

@@ -2,22 +2,19 @@ body{
     background-image: linear-gradient(to right, #ffffff, #aaacad);
 }
 
-.colorTopo{
-    background-image: linear-gradient(to right, #0c283a, #042e42);
-    color: white;
-}
-
 .colorMenu{
-    background-image: linear-gradient(to right, #1c445e, #073950);
+    background-image: linear-gradient(to right, #146829, #3b5f47);
     color: white;
+    height: 70px;
 }
 .colorRodape{
-    background-image: linear-gradient(to right, #2a4f68, #044766);
+    background-image: linear-gradient(to right, #034718, #15941d);
     color: white;
     width: 100%;
+    height: 300px;
 }
 .colorRodapedois{
-    background-image: linear-gradient(to right, #192b36, #154358);
+    background-image: linear-gradient(to right, #0a5c1e, #154358);
     color: white;
     width: 100%;
     height: 200px;

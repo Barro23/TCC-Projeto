@@ -1,5 +1,5 @@
 <?php
-    include_once("../dao/manipuladados.php");
+    include_once("../../dao/manipuladados.php");
     $manipula = new manipuladados();
 
     if(IsSet($_COOKIE["email_usuario"]))
@@ -18,12 +18,12 @@
         {
             setcookie("email_usuario");
             setcookie("senha_usuario");
-            header("location: telaLoginAdm.php");
+            header("location: telaLogin.php");
             exit();
         }
     }
     else{
-        header("location: telaLoginAdm.php");
+        header("location: telaLogin.php");
         exit();
     }
 ?>
