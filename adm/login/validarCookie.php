@@ -1,29 +1,34 @@
 <?php
-    include_once("../../dao/manipuladados.php");
+
+    session_start();
+    include_once('../../dao/manipuladados.php');
+
     $manipula = new manipuladados();
 
-    if(IsSet($_COOKIE["email_usuario"]))
-        $email_usuario = $_COOKIE["email_usuario"];
+    // Recebendo as variaveis do POST
+    $email = $_POST['email'];
+    $senha = $_POST['password'];
+    $tipo = $_POST['tipo'];
 
-    if(IsSet($_COOKIE["senha_usuario"]))
-        $senha_usuario = $_COOKIE["senha_usuario"];
+    // Definindo a tebela da consulta do banco de dados
+    $manipula->setTable("tb_usuario");
 
-    if(!(empty($email_usuario) or empty($senha_usuario))){
-       
-        $manipula->setTable('usuario');
-        $linhas = $manipula->validarLogin($email_usuario, $senha_usuario);
+    // Retorna a quantidade de usuarios registrados com o email e usuarios passados como parametro
+    $linhas = $manipula->validarLogin($email, $senha , $tipo);
 
-
-        if($linhas == 0)
-        {
-            setcookie("email_usuario");
-            setcookie("senha_usuario");
-            header("location: telaLogin.php");
-            exit();
-        }
-    }
-    else{
-        header("location: telaLogin.php");
+    // Caso não exista um usuário registrado no banco de dados
+    if($linhas == 0){
+        $_SESSION['jsAlert'] = "<script>alert('Usuário e/ou senha incorreto(s)')</script>";
+        header("Location: login.php");
+        exit();
+    }else{
+        // Definindo a variavel global e o coockie  email
+        $_SESSION['email'] = $email;
+        $_SESSION['tipo'] = $tipo;
+        setcookie("email", $email, time() + (86400 * 30), "/");  
+        setcookie("tipo", $tipo);
+        // Voltando para o index
+        header("Location: ../../index.php");
         exit();
     }
 ?>

@@ -1,7 +1,7 @@
 <?php
     session_start();
     include_once("../controller/verurl.php");
-    include_once("validarcookie.php");
+    include_once("validarCookie.php");
     
     echo @$_SESSION["alerta"];
     $_SESSION["alerta"]="";

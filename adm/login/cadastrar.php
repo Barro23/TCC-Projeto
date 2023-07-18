@@ -3,7 +3,7 @@
     session_start();
     include_once('../../dao/manipuladados.php');
 
-    $checkusers = new manipular_dados();
+    $checarUsuarios = new manipuladados();
 
     $nome = $_POST['nome'];
     $email = $_POST['email'];
@@ -11,10 +11,10 @@
     $tipo = $_POST['tipo'];
 
 
-    $checkusers->setTable("tb_usuarios");
-    $users = $checkusers->getAllDataTable();
+    $checarUsuarios->setTable("tb_usuario");
+    $usuarios = $checarUsuarios->getAllDataTable();
 
-    $cadastrado = $checkusers->validarLoginExistente($email);
+    $cadastrado = $checarUsuarios->validarLoginExistente($email);
 
     if($cadastrado){
         $_SESSION['message_alertJs'] = "Erro ao cadastrar usuário, e-mail já registrado.";
@@ -23,9 +23,9 @@
         header("Location: login.php");
         exit();
     }else{
-        $checkusers->setFields("nome,email,senha");
-        $checkusers->setDados("'$nome','$email','$senha'");
-        $checkusers->insert();
+        $checarUsuarios->setFields("nome, email, senha, tipo");
+        $checarUsuarios->setDados("'$nome','$email','$senha','$tipo'");
+        $checarUsuarios->insert();
 
 
         $_SESSION['message_alertJs'] = "Usuário cadastrado com sucesso!";

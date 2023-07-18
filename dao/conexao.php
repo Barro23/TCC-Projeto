@@ -6,7 +6,7 @@
                 $this->host = "localhost";
                 $this->user = "root";
                 $this->pass = "";
-                $this->dba = "db_amazon";
+                $this->dba = "db_tcc";
                 self::connect();
                 //echo "conectado com sucesso!!!!";
             }
