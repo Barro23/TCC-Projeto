@@ -7,7 +7,7 @@ $isset = IsSet($_COOKIE['email']);
 
 ?>
   
-  <div class="container-fluid" style="width: 80%;">
+  <div class="container">
     <a class="navbar-brand" href="?secoes=inicio">IMG</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon" ></span>
@@ -18,7 +18,7 @@ $isset = IsSet($_COOKIE['email']);
       $manipula = new manipuladados();
       // Caso o usuario logado seja o adm@adm
       if(@$_COOKIE['email'] == "adm@adm"){?>
-        <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel" style="width: 60%; background-image: linear-gradient(to right, #146829, #3b5f47);">
+        <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel" style="width: 60%; background-image: linear-gradient(to right, #ffffff, #b7e4db);">
           <div class="offcanvas-header">
             <h5 class="offcanvas-title" id="offcanvasNavbarLabel">IMG</h5>
             <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
@@ -46,21 +46,18 @@ $isset = IsSet($_COOKIE['email']);
 
       
       }else if($isset){ 
-        if(@$_SESSION['tipo'] == "aluno"){
+        if($manipula->getUsuarioByEmail($_COOKIE['email'])[0]['tipo']  == "aluno"){
       
         ?>
 
-        <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel" style="width: 60%; background-image: linear-gradient(to right, #146829, #3b5f47);">
+        <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel" style="width: 60%; ">
           <div class="offcanvas-header">
-            <h5 class="offcanvas-title" id="offcanvasNavbarLabel">IMG</h5>
+            <img src="<?php echo  $manipula->getUsuarioByEmail($_COOKIE['email'])[0]['img_capa'] ?>" style="object-fit: cover; margin-left:15px; width: 80px; height: 80px; border-radius: 20%;   position: relative;">
             <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
           </div>
           <div class="offcanvas-body">
             <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
-              <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="?secoes=jogos">Jogos</a>
-              </li>
-              <li class="nav-item dropdown">
+            <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                   <?php echo "Olá ". $manipula->getUsuarioByEmail($_COOKIE['email'])[0]['nome'] ?>
                 </a>
@@ -68,23 +65,25 @@ $isset = IsSet($_COOKIE['email']);
                   <li><a class="dropdown-item" href="?secoes=perfil">Perfil</a></li>
                   <li><a class="dropdown-item" href="adm/login/sair.php">Sair</a></li>
                 </ul>
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="?secoes=jogos">Jogos</a>
+              </li>
+              
               </li>
             </ul>
           </div>
         </div>
 
-        <?php } else if(@$_SESSION['tipo'] == "prof"){ ?>
-          <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel" style="width: 60%; background-image: linear-gradient(to right, #146829, #3b5f47);">
+        <?php } else if($manipula->getUsuarioByEmail($_COOKIE['email'])[0]['tipo'] == "prof"){ ?>
+          <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel" style="width: 60%;">
             <div class="offcanvas-header">
-              <h5 class="offcanvas-title" id="offcanvasNavbarLabel">IMG</h5>
+            <img src="<?php echo  $manipula->getUsuarioByEmail($_COOKIE['email'])[0]['img_capa'] ?>" style="object-fit: cover; margin-left:15px; width: 80px; height: 80px; border-radius: 20%;  position: relative;">
               <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
             </div>
             <div class="offcanvas-body">
               <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
-                <li class="nav-item">
-                  <a class="nav-link active" aria-current="page" href="?secoes=curso">Cursos</a>
-                </li>
-                <li class="nav-item dropdown">
+
+              <li class="nav-item dropdown">
                   <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                     <?php echo "Olá ". $manipula->getUsuarioByEmail($_COOKIE['email'])[0]['nome'] ?>
                   </a>
@@ -93,6 +92,10 @@ $isset = IsSet($_COOKIE['email']);
                     <li><a class="dropdown-item" href="adm/login/sair.php">Sair</a></li>
                   </ul>
                 </li>
+                <li class="nav-item">
+                  <a class="nav-link active" aria-current="page" href="?secoes=curso">Cursos</a>
+                </li>
+                
               </ul>
             </div>
           </div>
@@ -102,7 +105,7 @@ $isset = IsSet($_COOKIE['email']);
       <?php
 
       }else{ ?>
-        <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel" style="width: 60%; background-image: linear-gradient(to right, #146829, #3b5f47);">
+        <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel" style="width: 60%;);">
           <div class="offcanvas-header">
             <h5 class="offcanvas-title" id="offcanvasNavbarLabel">IMG</h5>
             <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>

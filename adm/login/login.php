@@ -69,7 +69,7 @@ session_start();
     </center>
 
     
-        <div class="modal fade" id="modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal fade" id="modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true"  >
             <div class="modal-dialog">
                 <div class="modal-content">
 
@@ -78,11 +78,36 @@ session_start();
                         <h1 class="modal-title fs-5" id="exampleModalLabel">Crie a sua conta</h1>
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
-                    <form method="POST" action="cadastrar.php">
+                    <form method="POST" action="cadastrar.php" enctype="multipart/form-data">
                         <div class="modal-body">
                             <div class="mb-3">
                                 <label class="form-label">Nome</label>
                                 <input type="text" class="form-control" name="nome">
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label">Nome Completo</label>
+                                <input type="text" class="form-control" name="nome_completo">
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label">Instituição</label>
+                                <input type="text" class="form-control" name="instituto">
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label">Descreva-se</label>
+                                <input type="text" class="form-control" name="descricao">
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label">Escolha uma imagem para sua Capa</label>
+                                <input type="file" name="img_capa" class="form-control" id="formGroupExampleInput2" placeholder="Ex.:img/img.png">
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label">Escolha uma imagem para seu Fundo</label>
+                                <input type="file" name="img_fundo" class="form-control" id="formGroupExampleInput2" placeholder="Ex.:img/img.png">
+                            </div>
+                    
+                            <div class="mb-3">
+                                <label class="form-label">Data de Nascimento</label>
+                                <input type="date" class="form-control" name="data_nascimento">
                             </div>
                             <div class="mb-3">
                                 <label for="exampleInputEmail1" class="form-label">Email</label>
@@ -103,7 +128,7 @@ session_start();
 
                         <div class="modal-footer">
                             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
-                            <button type="submit" class="btn btn-primary">Criar Conta</button>
+                            <button type="submit"  class="btn btn-primary" name="acao" value="cadastrar">Criar Conta</button>
                         </div>
                     </form>
                     

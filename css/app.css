@@ -1,20 +1,20 @@
 body{
-    background-image: linear-gradient(to right, #ffffff, #aaacad);
+    background-image: linear-gradient(to right, #ffffff, #b7e4db);
 }
 
 .colorMenu{
-    background-image: linear-gradient(to right, #146829, #3b5f47);
+    background-image: linear-gradient(to right, #40554b, #b6cfbf);
     color: white;
     height: 70px;
 }
 .colorRodape{
-    background-image: linear-gradient(to right, #034718, #15941d);
+    background-image: linear-gradient(to right, #40554b, #b6cfbf);
     color: white;
     width: 100%;
     height: 300px;
 }
 .colorRodapedois{
-    background-image: linear-gradient(to right, #0a5c1e, #154358);
+    background-image: linear-gradient(to right, #ffffff, #b7e4db);
     color: white;
     width: 100%;
     height: 200px;
