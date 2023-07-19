@@ -7,9 +7,9 @@ $manipula = new manipuladados();
 ?>
 <div class="container"> 
     <div class="card mb-3" style="">
-        <img src="<?php echo  $manipula->getUsuarioByEmail($_COOKIE['email'])[0]['img_fundo'] ?>" class="card-img-top" style="object-fit: fill; height: 150px; ">
+        <img src="<?php echo  $manipula->getUsuarioByEmail($_COOKIE['email'])[0]['img_fundo'] ?>" class="card-img-top" style="object-fit: cover; height: 150px; ">
         <div class="card-body">
-            <img src="<?php echo  $manipula->getUsuarioByEmail($_COOKIE['email'])[0]['img_capa'] ?>" style="object-fit: contain; width: 140px; height: 140px; border-radius: 50%;  border:solid 1px black; position: relative; margin-top: -100px;">
+            <img src="<?php echo  $manipula->getUsuarioByEmail($_COOKIE['email'])[0]['img_capa'] ?>" style="object-fit: fill; width: 140px; height: 140px; border-radius: 50%;  border:solid 4px white; position: relative; margin-top: -100px;">
             <div class="container row row-cols-2">
                 <div class="col">
                     <h1 class="card-title"><?php echo  $manipula->getUsuarioByEmail($_COOKIE['email'])[0]['nome'] ?></h1>

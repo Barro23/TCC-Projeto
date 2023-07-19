@@ -18,7 +18,7 @@ $isset = IsSet($_COOKIE['email']);
       $manipula = new manipuladados();
       // Caso o usuario logado seja o adm@adm
       if(@$_COOKIE['email'] == "adm@adm"){?>
-        <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel" style="width: 60%; background-image: linear-gradient(to right, #ffffff, #b7e4db);">
+        <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel" style="width: 60%; ">
           <div class="offcanvas-header">
             <h5 class="offcanvas-title" id="offcanvasNavbarLabel">IMG</h5>
             <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
