@@ -18,15 +18,13 @@
 
     // Caso não exista um usuário registrado no banco de dados
     if($linhas == 0){
-        $_SESSION['jsAlert'] = "<script>alert('Usuário e/ou senha incorreto(s)')</script>";
-        header("Location: login.php");
-        exit();
+        echo '<script>alert("Usuario não cadastrado ou incorreto(s)");</script>';
+        echo "<script>location ='login.php';</script>";
     }else{
-        // Definindo a variavel global e o coockie  email
+        // Definindo a variavel global e o coockie 
         $_SESSION['email'] = $email;
         $_SESSION['tipo'] = $tipo;
-        setcookie("email", $email, time() + (86400 * 30), "/");  
-        setcookie("tipo", $tipo);
+        setcookie("email", $email, time() + (106400 * 30), "/");  
         // Voltando para o index
         header("Location: ../../index.php");
         exit();

@@ -17,21 +17,17 @@
     $cadastrado = $checarUsuarios->validarLoginExistente($email);
 
     if($cadastrado){
-        $_SESSION['message_alertJs'] = "Erro ao cadastrar usuário, e-mail já registrado.";
-        $_SESSION['type_alertJs'] = "danger";
-        
-        header("Location: login.php");
-        exit();
+        echo '<script>alert("Usuario ja existe");</script>';
+        echo "<script>location ='login.php';</script>";
+
     }else{
         $checarUsuarios->setFields("nome, email, senha, tipo");
         $checarUsuarios->setDados("'$nome','$email','$senha','$tipo'");
         $checarUsuarios->insert();
 
 
-        $_SESSION['message_alertJs'] = "Usuário cadastrado com sucesso!";
-        $_SESSION['type_alertJs'] = "success";
-        header("Location: login.php");
-        exit();
+        echo '<script>alert("Usuario Cadastrado com sucesso");</script>';
+        echo "<script>location ='login.php';</script>";
     }
     
 ?>
