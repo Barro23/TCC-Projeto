@@ -29,7 +29,7 @@
   </div>
 </div>
 
-<div class="container" style="margin-top: -300px;  position: relative;">
+<div class="container" style="margin-top: -10%;  position: relative;">
   <h1 style="margin-left: 20px;">texto foda</h1>
   <h2 >A educação ambiental é um processo de reconhecimento de valores e clarificações de conceitos, objetivando o desenvolvimento das habilidades e modificando as atitudes em relação ao meio, para entender e apreciar as inter-relações entre os seres humanos, suas culturas e seus meios biofísicos.</h2>
 

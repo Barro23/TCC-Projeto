@@ -81,6 +81,17 @@
 
             echo '<script>alert("Usuario Atualizado com sucesso");</script>';
             echo "<script>location ='../../?secoes=perfil';</script>";
-        }
+    }
+
+   
+    if ($acao == "Deletar"){
+        $id =  $_POST["id"];
+        $delete = new manipuladados();
+        $delete->DeleteUser($id);
+
+        echo '<script>alert("Usuario deletado sucesso");</script>';
+        echo "<script>location ='login.php';</script>";
+    }
+
     
 ?>

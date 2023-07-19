@@ -33,11 +33,12 @@
             $this->qr = self::exeSQL($this->sql);
         }
 
-        /*** 
-        public function delete($id){
-            $this->sql = "DELETE FROM produto WHERE id = '".$id."'";
+        
+        public function DeleteUser($id){
+            $this->sql = "DELETE FROM tb_usuario WHERE id = '".$id."'";
             $this->qr = self::exeSQL($this->sql);
         }
+        /*** 
         public function update($descricao, $quantidade, $valor, $status, $img, $id){
             $this->sql = "UPDATE produto SET descricao = '".$descricao."',quantidade = '".$quantidade."',valor = '".$valor."',status = '".$status."',img = '".$img."' WHERE $id = id ";
             $this->qr = self::exeSQL($this->sql);
