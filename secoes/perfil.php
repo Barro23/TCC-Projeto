@@ -9,7 +9,25 @@ $manipula = new manipuladados();
     <div class="card mb-3" style="">
         <img src="<?php echo  $manipula->getUsuarioByEmail($_COOKIE['email'])[0]['img_fundo'] ?>" class="card-img-top" style="object-fit: cover; height: 150px; ">
         <div class="card-body">
-            <img src="<?php echo  $manipula->getUsuarioByEmail($_COOKIE['email'])[0]['img_capa'] ?>" style="object-fit: fill; width: 140px; height: 140px; border-radius: 50%;  border:solid 4px white; position: relative; margin-top: -100px;">
+            <button type="button" class="btn btn" data-bs-toggle="modal" data-bs-target="#exampleModal" style="border:none;"><img src="<?php echo  $manipula->getUsuarioByEmail($_COOKIE['email'])[0]['img_capa'] ?>" style="object-fit: fill; width: 140px; height: 140px; border-radius: 50%;  border:solid 4px white; position: relative; margin-top: -100px;"></button>
+            
+            <!-- Modal -->
+            <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+
+                <div class="modal-body">
+                    <img src="<?php echo  $manipula->getUsuarioByEmail($_COOKIE['email'])[0]['img_capa'] ?>" style="object-fit: cover; width: 100%; height: 100%; border-radius: 2%;">
+                    <img style=" margin-top: 10px; margin-left: 90%; width: 25px; height: 25px;" src="img/Icons/editar.svg"/>
+                </div>
+                
+    
+
+        
+                </div>
+            </div>
+            </div>
+            
             <div class="container row row-cols-2">
                 <div class="col">
                     <h1 class="card-title"><?php echo  $manipula->getUsuarioByEmail($_COOKIE['email'])[0]['nome'] ?></h1>
