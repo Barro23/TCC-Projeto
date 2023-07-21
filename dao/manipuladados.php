@@ -38,6 +38,14 @@
             $this->sql = "DELETE FROM tb_usuario WHERE id = '".$id."'";
             $this->qr = self::exeSQL($this->sql);
         }
+        public function updateText($id, $id_usuario, $titulo, $resumo, $texto){
+            $this->sql = "UPDATE tb_textos SET titulo ='".$titulo."', resumo = '".$resumo."' , texto = '".$texto."' WHERE $id = id and $id_usuario = id_usuario";
+            $this->qr = self::exeSQL($this->sql);
+        }
+        public function deleteText($id){
+            $this->sql = "DELETE FROM tb_textos WHERE id = '".$id."'";
+            $this->qr = self::exeSQL($this->sql);
+        }
         /*** 
         public function update($descricao, $quantidade, $valor, $status, $img, $id){
             $this->sql = "UPDATE produto SET descricao = '".$descricao."',quantidade = '".$quantidade."',valor = '".$valor."',status = '".$status."',img = '".$img."' WHERE $id = id ";

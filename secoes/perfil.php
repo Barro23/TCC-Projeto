@@ -10,7 +10,7 @@ $manipula = new manipuladados();
     <div class="card mb-3" style="">
         <img src="<?php echo  $manipula->getUsuarioByEmail($_COOKIE['email'])[0]['img_fundo'] ?>" class="card-img-top" style="object-fit: cover; height: 150px; ">
         <div class="card-body">
-            <button type="button" class="btn btn" data-bs-toggle="modal" data-bs-target="#exampleModal" style="border:none;"><img src="<?php echo  $manipula->getUsuarioByEmail($_COOKIE['email'])[0]['img_capa'] ?>" style="object-fit: fill; width: 140px; height: 140px; border-radius: 50%; position: relative; margin-top: -100px;"></button>
+            <button type="button" class="btn btn" data-bs-toggle="modal" data-bs-target="#exampleModal" style="border:none;"><img src="<?php echo  $manipula->getUsuarioByEmail($_COOKIE['email'])[0]['img_capa'] ?>" style="object-fit: fill;background-color: white;  width: 140px; height: 140px; border-radius: 50%; border: solid 4px white; position: relative; margin-top: -100px;"></button>
             
             <!-- Modal -->
             <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -18,7 +18,7 @@ $manipula = new manipuladados();
                 <div class="modal-content">
 
                 <div class="modal-body">
-                    <img src="<?php echo  $manipula->getUsuarioByEmail($_COOKIE['email'])[0]['img_capa'] ?>" style="object-fit: cover; width: 100%; height: 100%; border-radius: 2%;">
+                    <img src="<?php echo  $manipula->getUsuarioByEmail($_COOKIE['email'])[0]['img_capa'] ?>" style="object-fit: cover;  width: 100%;  height: 100%; border-radius: 2%;">
                     <img style=" margin-top: 10px; margin-left: 90%; width: 25px; height: 25px;" src="img/Icons/editar.svg"/>
                 </div>
                 
@@ -35,9 +35,9 @@ $manipula = new manipuladados();
                 </div>
                 <div class="col">
                     
-                    <button class="btn btn" style="margin-left:92%;" data-bs-toggle="modal" data-bs-target="#modal"><img src="img/Icons/editar.svg"/></a></button>
+                    <button class="btn btn" style="margin-left:92%;" data-bs-toggle="modal" data-bs-target="#modal<?php echo  $manipula->getUsuarioByEmail($_COOKIE['email'])[0]['id'] ?>"><img src="img/Icons/editar.svg"/></a></button>
 
-                    <div class="modal fade" id="modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true"  >
+                    <div class="modal fade" id="modal<?php echo  $manipula->getUsuarioByEmail($_COOKIE['email'])[0]['id'] ?>" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true"  >
                         <div class="modal-dialog">
                             <div class="modal-content">
 
@@ -67,7 +67,7 @@ $manipula = new manipuladados();
                                         </div>
                                         <div class="mb-3">
                                             <label class="form-label">Escolha uma imagem para sua Capa</label>
-                                            <input type="file" name="img_capa" class="form-control" id="formGroupExampleInput2" value="<?php echo $manipula->getUsuarioByEmail($_COOKIE['email'])[0]['img_capa'] ?>">
+                                            <input type="file" name="img_capa" class="form-control" value="<?php echo $manipula->getUsuarioByEmail($_COOKIE['email'])[0]['img_capa'] ?>">
                                         </div>
                                         <div class="mb-3">
                                             <label class="form-label">Escolha uma imagem para seu Fundo</label>
@@ -190,50 +190,52 @@ $manipula = new manipuladados();
         foreach($publicacoes->getAllDataTable() as $textos){
 
             if($manipula->getUsuarioByEmail($_COOKIE['email'])[0]['id'] == $textos['id_usuario']){
+                
         ?> 
             
             <div class="card container mb-4" style="width: 100%;">
                 <div class="card-body">
 
-                    <a href="?secoes=conteudos&textoId=<?= $textos['id']?>" style="text-decoration: none; color: black;">
+                   
                        
                         <div class="row">
                             <div class="col-10">
                                 <h5 class="card-title"><?= $textos['titulo']?></h5>
                             </div>
                             <div class="col-2">
-                                <button class="btn btn" style="margin-left:80%;" data-bs-toggle="modal" data-bs-target="#modal3"><img src="img/Icons/editar.svg"/></button>
-
-                                <div class="modal fade" id="modal3" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true"  >
+                                <button class="btn btn" style="margin-left:80%;" data-bs-toggle="modal" data-bs-target="#modal<?php echo  $textos['id']?>"><img src="img/Icons/editar.svg"/></button>
+                        
+                                <div class="modal fade" id="modal<?php echo $textos['id']?>" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true"  >
                                     <div class="modal-dialog">
                                         <div class="modal-content">
 
                                         
                                             <div class="modal-header">
-                                                <h1 class="modal-title fs-5" id="exampleModalLabel">Poste um novo Conteúdo</h1>
+                                                <h1 class="modal-title fs-5" id="exampleModalLabel">Edite seu Postagem</h1>
                                                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                             </div>
                                             <form method="POST" action="adm/postagens/postar.php" enctype="multipart/form-data">
                                                 <div class="modal-body">
                                                     <div class="mb-3">
+                                                        <input type="text" class="form-control" hidden  name="id" value="<?= $textos['id']?>" >
                                                         <input type="text" class="form-control" hidden  name="id_usuario" value="<?php echo  $manipula->getUsuarioByEmail($_COOKIE['email'])[0]['id'] ?>" >
                                                         <label class="form-label">Titulo do conteúdo</label>
-                                                        <input type="text" class="form-control" name="titulo">
+                                                        <input type="text" class="form-control" name="titulo" value="<?= $textos['titulo']?>">
                                                     </div>
                                                     <div class="mb-3">
                                                         <label class="form-label">Resumo</label>
-                                                        <input type="text" class="form-control" name="resumo" ">
+                                                        <input type="text" class="form-control" name="resumo" value="<?= $textos['resumo']?>">
                                                     </div>
                                                     <div class="mb-3">
                                                         <label class="form-label">Texto</label>
-                                                        <input type="text" class="form-control" name="texto">
+                                                        <input type="text" class="form-control" name="texto" value="<?= $textos['texto']?>">
                                                     </div>
                                                     
                                                 </div>
 
                                                 <div class="modal-footer">
-                                                    
-                                                    <button type="submit"  class="btn btn-primary" name="acao" value="postar">Postar</button>
+                                                    <button type="submit"  class="btn btn-primary" name="acao" value="apagar">Apagar</button>
+                                                    <button type="submit"  class="btn btn-primary" name="acao" value="atualizar">Atualizar</button>
                                                 </div>
                                             </form>
                                             
@@ -241,7 +243,7 @@ $manipula = new manipuladados();
                                     </div>
                                 </div>
                             </div>
-                                
+                    <a href="?secoes=conteudos&textoId=<?= $textos['id']?>" style="text-decoration: none; color: black;">         
                         </div>  
                             Resumo                       
                             <p class="card-text"><?= $textos['resumo']?></p>
