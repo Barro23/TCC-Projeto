@@ -127,6 +127,10 @@ $manipula = new manipuladados();
         }else if($manipula->getUsuarioByEmail($_COOKIE['email'])[0]['tipo'] == "prof"){
     ?>
             <h1 style="margin-left: 20px;">Seus Cursos:</h1>
+
+
+
+            
     <?php
         }
     ?>
