@@ -1,4 +1,4 @@
-<div class="container">
+
 <?php
 
 
@@ -10,7 +10,7 @@ $manipula = new manipuladados();
     <div class="card mb-3" style="">
         <img src="<?php echo  $manipula->getUsuarioByEmail($_COOKIE['email'])[0]['img_fundo'] ?>" class="card-img-top" style="object-fit: cover; height: 150px; ">
         <div class="card-body">
-            <button type="button" class="btn btn" data-bs-toggle="modal" data-bs-target="#exampleModal" style="border:none;"><img src="<?php echo  $manipula->getUsuarioByEmail($_COOKIE['email'])[0]['img_capa'] ?>" style="object-fit: fill; width: 140px; height: 140px; border-radius: 50%;  border:solid 4px white; position: relative; margin-top: -100px;"></button>
+            <button type="button" class="btn btn" data-bs-toggle="modal" data-bs-target="#exampleModal" style="border:none;"><img src="<?php echo  $manipula->getUsuarioByEmail($_COOKIE['email'])[0]['img_capa'] ?>" style="object-fit: fill; width: 140px; height: 140px; border-radius: 50%; position: relative; margin-top: -100px;"></button>
             
             <!-- Modal -->
             <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -130,8 +130,58 @@ $manipula = new manipuladados();
    
     ?>
             
-       <p><h1 style="margin-left: 20px;">Seus Publicações:</h1></p>
-   
+
+
+       <div class="container row">
+                <div class="col-9">
+                    <h1 class="card-title">Suas Publicações</h1>
+                </div>
+                <div class="col-3">
+                    
+                    <button class="btn btn" style="margin-left:80%;" data-bs-toggle="modal" data-bs-target="#modal2"><img src="img/Icons/mais.svg"/></a></button>
+
+                    <div class="modal fade" id="modal2" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true"  >
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+
+                            
+                                <div class="modal-header">
+                                    <h1 class="modal-title fs-5" id="exampleModalLabel">Poste um novo Conteúdo</h1>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                </div>
+                                <form method="POST" action="adm/postagens/postar.php" enctype="multipart/form-data">
+                                    <div class="modal-body">
+                                        <div class="mb-3">
+                                            <input type="text" class="form-control" hidden  name="id_usuario" value="<?php echo  $manipula->getUsuarioByEmail($_COOKIE['email'])[0]['id'] ?>" >
+                                            <label class="form-label">Titulo do conteúdo</label>
+                                            <input type="text" class="form-control" name="titulo">
+                                        </div>
+                                        <div class="mb-3">
+                                            <label class="form-label">Resumo</label>
+                                            <input type="text" class="form-control" name="resumo" ">
+                                        </div>
+                                        <div class="mb-3">
+                                            <label class="form-label">Texto</label>
+                                            <input type="text" class="form-control" name="texto">
+                                        </div>
+                                        
+                                    </div>
+
+                                    <div class="modal-footer">
+                                        
+                                        <button type="submit"  class="btn btn-primary" name="acao" value="postar">Postar</button>
+                                    </div>
+                                </form>
+                                
+                            </div>
+                        </div>
+                        
+                    </div>
+                </div>
+               
+               
+            </div>
+        </div>
        <?php
         $publicacoes = new manipuladados();
 
@@ -141,13 +191,59 @@ $manipula = new manipuladados();
 
             if($manipula->getUsuarioByEmail($_COOKIE['email'])[0]['id'] == $textos['id_usuario']){
         ?> 
-            <div class="card" style="width: 100%;">
+            
+            <div class="card container mb-4" style="width: 100%;">
                 <div class="card-body">
 
                     <a href="?secoes=conteudos&textoId=<?= $textos['id']?>" style="text-decoration: none; color: black;">
-                        </div>
-                            <h5 class="card-title"><?= $textos['titulo']?></h5>
-                            Resumo
+                       
+                        <div class="row">
+                            <div class="col-10">
+                                <h5 class="card-title"><?= $textos['titulo']?></h5>
+                            </div>
+                            <div class="col-2">
+                                <button class="btn btn" style="margin-left:80%;" data-bs-toggle="modal" data-bs-target="#modal3"><img src="img/Icons/editar.svg"/></button>
+
+                                <div class="modal fade" id="modal3" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true"  >
+                                    <div class="modal-dialog">
+                                        <div class="modal-content">
+
+                                        
+                                            <div class="modal-header">
+                                                <h1 class="modal-title fs-5" id="exampleModalLabel">Poste um novo Conteúdo</h1>
+                                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                            </div>
+                                            <form method="POST" action="adm/postagens/postar.php" enctype="multipart/form-data">
+                                                <div class="modal-body">
+                                                    <div class="mb-3">
+                                                        <input type="text" class="form-control" hidden  name="id_usuario" value="<?php echo  $manipula->getUsuarioByEmail($_COOKIE['email'])[0]['id'] ?>" >
+                                                        <label class="form-label">Titulo do conteúdo</label>
+                                                        <input type="text" class="form-control" name="titulo">
+                                                    </div>
+                                                    <div class="mb-3">
+                                                        <label class="form-label">Resumo</label>
+                                                        <input type="text" class="form-control" name="resumo" ">
+                                                    </div>
+                                                    <div class="mb-3">
+                                                        <label class="form-label">Texto</label>
+                                                        <input type="text" class="form-control" name="texto">
+                                                    </div>
+                                                    
+                                                </div>
+
+                                                <div class="modal-footer">
+                                                    
+                                                    <button type="submit"  class="btn btn-primary" name="acao" value="postar">Postar</button>
+                                                </div>
+                                            </form>
+                                            
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                                
+                        </div>  
+                            Resumo                       
                             <p class="card-text"><?= $textos['resumo']?></p>
                         </div>
                     </a>

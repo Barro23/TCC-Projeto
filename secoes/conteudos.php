@@ -10,7 +10,25 @@
     
     <div class="card" style="width: 100%;">
             <div class="card-body">
+            <?php 
+   
+                if($manipula->getUsuarioByEmail($_COOKIE['email'])[0]['id'] == $texto[0]['id_usuario']){
+   
+            ?>
+                    <a href="?secoes=perfil" style="text-decoration: none; color: black;">
+
+            <?php 
+   
+                }else{
+   
+            ?>
                 <a href="?secoes=perfis&perfisId=<?= $texto[0]['id_usuario']?>" style="text-decoration: none; color: black;">
+
+            <?php 
+
+                }
+
+            ?>
                     <div>
                         <img src="<?= $manipula->getTextosByUsuariosID($texto[0]['id_usuario'])[0]['img_capa']?>" style="object-fit: cover; width: 45px; height: 45px; border-radius: 50%">
                     </div>
