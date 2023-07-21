@@ -106,6 +106,31 @@
             
             return $listaresp;
         }
+
+        public function getTextosPorID($id){
+            $this->sql = "SELECT * FROM tb_texto WHERE id = $id;";
+            $this->qr = self::exeSQL($this->sql);
+    
+            $listaresp = array();
+    
+            while($row = @mysqli_fetch_assoc($this->qr)){
+                array_push($listaresp, $row);
+            }
+            
+            return $listaresp;
+        }
+        public function getTextosByUsuariosID($id){
+            $this->sql = "SELECT * FROM tb_usuario WHERE id = $id;";
+            $this->qr = self::exeSQL($this->sql);
+    
+            $listaresp = array();
+    
+            while($row = @mysqli_fetch_assoc($this->qr)){
+                array_push($listaresp, $row);
+            }
+            
+            return $listaresp;
+        }
     }
 
         
