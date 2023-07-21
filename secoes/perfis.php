@@ -1,12 +1,15 @@
 <div class="container">
-<?php
 
+    <?php 
+    include_once('dao/manipuladados.php');
+    $manipula = new manipuladados();
 
-include_once("dao/manipuladados.php");
-$manipula = new manipuladados();
+    $perfil = $manipula->getUsuariosPorID($_GET['perfisId']);
 
-?>
-<div class="container"> 
+    if($manipula->getUsuarioByEmail($_COOKIE['email'])[0]['id'] == $_GET['perfisId']){
+    ?>
+
+       
     <div class="card mb-3" style="">
         <img src="<?php echo  $manipula->getUsuarioByEmail($_COOKIE['email'])[0]['img_fundo'] ?>" class="card-img-top" style="object-fit: cover; height: 150px; ">
         <div class="card-body">
@@ -117,53 +120,25 @@ $manipula = new manipuladados();
                 <p class="card-text">Instituição: <?php echo  $manipula->getUsuarioByEmail($_COOKIE['email'])[0]['instituto'] ?></p>
             </div>
         </div>
-    </div>
-    <br/><br/>
 
-    <?php
-        if($manipula->getUsuarioByEmail($_COOKIE['email'])[0]['tipo'] == "aluno"){
+
+    <?php 
+        }else{
     ?>
-            <h1 style="margin-left: 20px;">Cursos Cadastrados:</h1>
-    <?php
-        }else if($manipula->getUsuarioByEmail($_COOKIE['email'])[0]['tipo'] == "prof"){
 
-   
-    ?>
-            
-       <p><h1 style="margin-left: 20px;">Seus Publicações:</h1></p>
-   
-       <?php
-        $publicacoes = new manipuladados();
-
-        $publicacoes->setTable("tb_textos");
-
-        foreach($publicacoes->getAllDataTable() as $textos){
-
-            if($manipula->getUsuarioByEmail($_COOKIE['email'])[0]['id'] == $textos['id_usuario']){
-        ?> 
-            <div class="card" style="width: 100%;">
+            <div class="card mb-3" style="">
+                <img src="<?= $perfil[0]['img_fundo'] ?>" class="card-img-top" style="object-fit: cover; height: 150px; ">
                 <div class="card-body">
-
-                    <a href="?secoes=conteudos&textoId=<?= $textos['id']?>" style="text-decoration: none; color: black;">
-                        </div>
-                            <h5 class="card-title"><?= $textos['titulo']?></h5>
-                            Resumo
-                            <p class="card-text"><?= $textos['resumo']?></p>
-                        </div>
-                    </a>
+                    
+                    <img src="<?= $perfil[0]['img_capa'] ?>" style="object-fit: fill; width: 140px; height: 140px; border-radius: 50%;  border:solid 4px white; position: relative; margin-top: -100px;">
+                    <h1 class="card-title"><?= $perfil[0]['nome'] ?></h1>
+                    <p><h5 class="card-title">Nome: <?= $perfil[0]['nome_completo'] ?></h5></p>
+                    <p class="card-text">Sobre: <?= $perfil[0]['descricao'] ?></p>
+                    <p class="card-text">Instituição: <?= $perfil[0]['instituto'] ?></p>
+                  
                 </div>
             </div>
-        
-
-    <?php
-        }}
-   
-    ?>
-
-
-
-    <?php
+    <?php 
         }
     ?>
-
 </div>

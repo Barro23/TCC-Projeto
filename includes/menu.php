@@ -68,6 +68,9 @@ $isset = IsSet($_COOKIE['email']);
               <li class="nav-item">
                 <a class="nav-link active" aria-current="page" href="?secoes=jogos">Jogos</a>
               </li>
+              <li class="nav-item">
+                  <a class="nav-link active" aria-current="page" href="?secoes=postagens">Comunidade</a>
+              </li>
               
               </li>
             </ul>
