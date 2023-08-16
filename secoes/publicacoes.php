@@ -302,5 +302,5 @@ $manipula = new manipuladados();
 ?>
        
            
-    </div>
+</div>
 
