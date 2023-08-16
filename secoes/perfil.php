@@ -120,6 +120,21 @@ $manipula = new manipuladados();
     </div>
     <br/><br/>
 
+    <ul class="nav nav-tabs">
+    <li class="nav-item">
+        <a class="nav-link active" aria-current="page" href="#textos">Textos</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link active" aria-current="page" href="#textos">PDfs</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link active" aria-current="page" href="#textos">Cursos</a>
+    </li>
+   
+    </ul>
+
+   
+    <div class="container" style="height:400px; width:100%; overflow:auto; padding:2%">
     <?php
         if($manipula->getUsuarioByEmail($_COOKIE['email'])[0]['tipo'] == "aluno"){
     ?>
@@ -130,11 +145,12 @@ $manipula = new manipuladados();
    
     ?>
             
+    
 
 
-       <div class="container row">
+       <div class="container row" id="textos">
                 <div class="col-9">
-                    <h1 class="card-title">Suas Publicações</h1>
+                    <h1 class="card-title">Textos</h1>
                 </div>
                 <div class="col-3">
                     
@@ -181,7 +197,7 @@ $manipula = new manipuladados();
                
                
             </div>
-        </div>
+        
        <?php
         $publicacoes = new manipuladados();
 
@@ -250,18 +266,22 @@ $manipula = new manipuladados();
                         </div>
                     </a>
                 </div>
-            </div>
+            
         
-
+            
     <?php
         }}
    
     ?>
+    
+    
+    
 
-
-
-    <?php
-        }
-    ?>
-
+    
+<?php
+    }
+?>
 </div>
+</div>
+</div>
+

@@ -63,10 +63,14 @@ $isset = IsSet($_COOKIE['email']);
                 </a>
                 <ul class="dropdown-menu">
                   <li><a class="dropdown-item" href="?secoes=perfil">Perfil</a></li>
+                  <li><a class="dropdown-item" href="?secoes=salvosAlunos">Salvos</a></li>
                   <li><a class="dropdown-item" href="adm/login/sair.php">Sair</a></li>
                 </ul>
               <li class="nav-item">
                 <a class="nav-link active" aria-current="page" href="?secoes=jogos">Jogos</a>
+              </li>
+              <li class="nav-item">
+                  <a class="nav-link active" aria-current="page" href="?secoes=curso">Cursos</a>
               </li>
               <li class="nav-item">
                   <a class="nav-link active" aria-current="page" href="?secoes=postagens">Comunidade</a>
@@ -92,6 +96,7 @@ $isset = IsSet($_COOKIE['email']);
                   </a>
                   <ul class="dropdown-menu">
                     <li><a class="dropdown-item" href="?secoes=perfil">Perfil</a></li>
+                    <li><a class="dropdown-item" href="?secoes=publicacoes">Suas Publicações</a></li>
                     <li><a class="dropdown-item" href="adm/login/sair.php">Sair</a></li>
                   </ul>
                 </li>

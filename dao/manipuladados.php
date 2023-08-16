@@ -46,6 +46,14 @@
             $this->sql = "DELETE FROM tb_textos WHERE id = '".$id."'";
             $this->qr = self::exeSQL($this->sql);
         }
+        public function updatePdf($id, $id_usuario, $titulo, $resumo, $url_local){
+            $this->sql = "UPDATE tb_pdf SET titulo ='".$titulo."', resumo = '".$resumo."' , pdf = '".$url_local."' WHERE $id = id and $id_usuario = id_usuario";
+            $this->qr = self::exeSQL($this->sql);
+        }
+        public function deletePdf($id){
+            $this->sql = "DELETE FROM tb_pdf WHERE id = '".$id."'";
+            $this->qr = self::exeSQL($this->sql);
+        }
         /*** 
         public function update($descricao, $quantidade, $valor, $status, $img, $id){
             $this->sql = "UPDATE produto SET descricao = '".$descricao."',quantidade = '".$quantidade."',valor = '".$valor."',status = '".$status."',img = '".$img."' WHERE $id = id ";
@@ -58,7 +66,7 @@
             $this->qr = self::exeSQL($this->sql);
             return $this->qr;
         }
-        **/
+        ***/
 
         public function getAllDataTable(){
             $this->sql = "SELECT * FROM $this->table;";
@@ -141,6 +149,19 @@
         }
         public function getTextosByUsuariosID($id){
             $this->sql = "SELECT * FROM tb_usuario WHERE id = $id;";
+            $this->qr = self::exeSQL($this->sql);
+    
+            $listaresp = array();
+    
+            while($row = @mysqli_fetch_assoc($this->qr)){
+                array_push($listaresp, $row);
+            }
+            
+            return $listaresp;
+        }
+
+        public function getCursoPorID($id){
+            $this->sql = "SELECT * FROM tb_curso WHERE id = $id;";
             $this->qr = self::exeSQL($this->sql);
     
             $listaresp = array();
