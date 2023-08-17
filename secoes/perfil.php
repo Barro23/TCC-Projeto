@@ -67,11 +67,11 @@ $manipula = new manipuladados();
                                         </div>
                                         <div class="mb-3">
                                             <label class="form-label">Escolha uma imagem para sua Capa</label>
-                                            <input type="file" name="img_capa" class="form-control" value="<?php echo $manipula->getUsuarioByEmail($_COOKIE['email'])[0]['img_capa'] ?>">
+                                            <input type="file" name="img_capa" required="required" class="form-control" value="<?php echo $manipula->getUsuarioByEmail($_COOKIE['email'])[0]['img_capa'] ?>">
                                         </div>
                                         <div class="mb-3">
                                             <label class="form-label">Escolha uma imagem para seu Fundo</label>
-                                            <input type="file" name="img_fundo" class="form-control" id="formGroupExampleInput2" value="<?php echo  $manipula->getUsuarioByEmail($_COOKIE['email'])[0]['img_fundo'] ?>">
+                                            <input type="file" name="img_fundo" required="required" class="form-control" id="formGroupExampleInput2" value="<?php echo  $manipula->getUsuarioByEmail($_COOKIE['email'])[0]['img_fundo'] ?>">
                                         </div>
                                 
                                         <div class="mb-3">
@@ -79,8 +79,8 @@ $manipula = new manipuladados();
                                             <input type="date" class="form-control" name="data_nascimento" value="<?php echo  $manipula->getUsuarioByEmail($_COOKIE['email'])[0]['data_nascimento'] ?>">
                                         </div>
                                         <div class="mb-3">
-                                            <label for="exampleInputEmail1" class="form-label">Email</label>
-                                            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="email" value="<?php echo  $manipula->getUsuarioByEmail($_COOKIE['email'])[0]['email'] ?>">
+                                
+                                            <input type="email" hidden required="required" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="email" value="<?php echo  $manipula->getUsuarioByEmail($_COOKIE['email'])[0]['email'] ?>">
                                             
                                         </div>
                                         <div class="mb-3">
@@ -89,9 +89,9 @@ $manipula = new manipuladados();
                                         </div>
                                         <div class="mb-3">
                                             <label for="exampleInputPassword1" class="form-label">Aluno</label>   
-                                            <input type="radio" id="html" name="tipo" value="aluno">
+                                            <input type="radio" id="html" required="required" name="tipo" value="aluno">
                                             <label for="exampleInputPassword1" class="form-label" style="margin-left: 15%;">Professor</label>
-                                            <input type="radio" id="html" name="tipo" value="prof">
+                                            <input type="radio" id="html"  required="required" name="tipo" value="prof">
                                         </div>
                                     </div>
 
@@ -118,8 +118,23 @@ $manipula = new manipuladados();
             </div>
         </div>
     </div>
-    <br/><br/>
+    <br/>
 
+    
+
+   
+    
+    <?php
+        if($manipula->getUsuarioByEmail($_COOKIE['email'])[0]['tipo'] == "aluno"){
+    ?>
+            
+    <?php
+        }else if($manipula->getUsuarioByEmail($_COOKIE['email'])[0]['tipo'] == "prof"){
+
+   
+    ?>
+            
+    <div class="container" style="height:600px; width:100%; overflow:auto; padding:2%">
     <ul class="nav nav-tabs">
     <li class="nav-item">
         <a class="nav-link active" aria-current="page" href="#textos">Textos</a>
@@ -132,21 +147,6 @@ $manipula = new manipuladados();
     </li>
    
     </ul>
-
-   
-    <div class="container" style="height:600px; width:100%; overflow:auto; padding:2%">
-    <?php
-        if($manipula->getUsuarioByEmail($_COOKIE['email'])[0]['tipo'] == "aluno"){
-    ?>
-            <h1 style="margin-left: 20px;">Cursos Cadastrados:</h1>
-    <?php
-        }else if($manipula->getUsuarioByEmail($_COOKIE['email'])[0]['tipo'] == "prof"){
-
-   
-    ?>
-            
-    
-
 
        <div class="container row" id="textos">
                 <div class="col-9">

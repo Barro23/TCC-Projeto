@@ -23,4 +23,130 @@
     <?php 
         
     ?>
+    <?php
+        if($perfil[0]['tipo'] == "aluno"){
+    ?>
+            
+    <?php
+        }else if($perfil[0]['tipo'] == "prof"){
+
+   
+    ?>
+    <ul class="nav nav-tabs">
+    <li class="nav-item">
+        <a class="nav-link active" aria-current="page" href="#textos">Textos</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link active" aria-current="page" href="#pdf">PDfs</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link active" aria-current="page" href="#cursos">Cursos</a>
+    </li>
+   
+    </ul>
+
+   
+    <div class="container" style="height:370px; width:100%; overflow:auto; padding:2%">
+    
+            
+    
+
+
+       <div class="container " id="textos">
+               
+               
+               
+        </div>
+        
+       <?php
+        $publicacoes = new manipuladados();
+
+        $publicacoes->setTable("tb_textos");
+
+        foreach($publicacoes->getAllDataTable() as $textos){
+
+            if($perfil[0]['id'] == $textos['id_usuario']){
+                
+        ?> 
+            
+            <div class="card container mb-4" style="width: 100%;">
+                <div class="card-body">
+
+                   
+                       
+                        <div >
+                            <div >
+                                <h5 class="card-title"><?= $textos['titulo']?></h5>
+                                
+                            </div>
+                    <a href="?secoes=conteudos&textoId=<?= $textos['id']?>" style="text-decoration: none; color: black;">         
+                        </div>  
+                            Resumo                       
+                            <p class="card-text"><?= $textos['resumo']?></p>
+                        </div>
+                    </a>
+                </div>
+            
+        
+            
+    <?php
+        }}
+   
+    ?>
+    
+        <div class="container" id="pdf">
+                 
+        </div>
+        
+       <?php
+        $publicacoes = new manipuladados();
+
+        $publicacoes->setTable("tb_pdf");
+
+        foreach($publicacoes->getAllDataTable() as $pdfs){
+
+            if($perfil[0]['id'] == $pdfs['id_usuario']){
+                
+        ?> 
+            
+            <div class="card container mb-4" style="width: 100%;">
+                <div class="card-body">
+
+                   
+                       
+                        <div >
+                            <div >
+                                <h5 class="card-title"><?= $pdfs['titulo']?></h5>
+                            
+                                
+                           
+                                
+                           
+
+                            </div>
+                    
+                            
+                        </div>
+
+                        <div style="width: 100%; height: 800px;">
+                                <embed src="<?= $pdfs['pdf']?>" type="application/pdf" style="width: 100%; height: 100%;">
+                        </div>
+                
+                    </div>
+            </div>
+                
+               
+               
+        <?php
+            }
+        ?>          
+        
+<?php
+    }}
+?>
+       
+           
+
+</div>
+</div>
 </div>

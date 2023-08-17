@@ -54,6 +54,10 @@
             $this->sql = "DELETE FROM tb_pdf WHERE id = '".$id."'";
             $this->qr = self::exeSQL($this->sql);
         }
+        public function deleteSalvos($id){
+            $this->sql = "DELETE FROM tb_salvos WHERE id = '".$id."'";
+            $this->qr = self::exeSQL($this->sql);
+        }
         /*** 
         public function update($descricao, $quantidade, $valor, $status, $img, $id){
             $this->sql = "UPDATE produto SET descricao = '".$descricao."',quantidade = '".$quantidade."',valor = '".$valor."',status = '".$status."',img = '".$img."' WHERE $id = id ";
@@ -135,8 +139,20 @@
             
             return $listaresp;
         }
-        public function getSalvoPorID($id_usuario){
-            $this->sql = "SELECT * FROM tb_salvos WHERE id_usuario = $id_usuario;";
+        public function getSalvoPorIDText($id_texto){
+            $this->sql = "SELECT * FROM tb_salvos WHERE id_texto = $id_texto;";
+            $this->qr = self::exeSQL($this->sql);
+    
+            $listaresp = array();
+    
+            while($row = @mysqli_fetch_assoc($this->qr)){
+                array_push($listaresp, $row);
+            }
+            
+            return $listaresp;
+        }
+        public function getSalvoPorIDPdf($id_pdf){
+            $this->sql = "SELECT * FROM tb_salvos WHERE id_pdf = $id_pdf;";
             $this->qr = self::exeSQL($this->sql);
     
             $listaresp = array();

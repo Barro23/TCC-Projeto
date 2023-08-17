@@ -71,13 +71,62 @@ $manipula = new manipuladados();
             }
 
         ?>
-            
+                <div class="container-fluid"> 
+                    <div>
                     <div id="pdf">
                         <img src="<?= $manipula->getTextosByUsuariosID($salvoPDF['id_usuario'])[0]['img_capa']?>" style="object-fit: cover; width: 45px; height: 45px; border-radius: 50%">
                     </div>
                     <div style="margin-left: 50px; margin-top: -30px;">
                         <h6><?= $manipula->getTextosByUsuariosID($salvoPDF['id_usuario'])[0]['nome']?></h6>
                     </div>  
+                    <div>
+                    <?php
+                        
+                        $salvos = new manipuladados();
+
+                        $salvos->setTable("tb_salvos");
+                        $salvo2 = $salvos->getSalvoPorIDPdf($salvoPDF['id']);
+
+                        if($salvo2[0]['id_pdf'] == $salvoPDF['id']){
+                            
+                            if( $salvo2[0]['id_usuario'] == $manipula->getUsuarioByEmail($_COOKIE['email'])[0]['id'] ){
+                
+                                    
+                                
+                        ?> 
+                        
+                            <form method="POST" action="adm/salvar/salvar.php" enctype="multipart/form-data">
+                                
+                                <input type="text" class="form-control" hidden  name="id" value="<?= $salvo2[0]['id']?>" >
+                                <button type="submit"  class="btn btn" name="acao" value="deletarPdfsInSalvarAlunos" style="margin-left:95%; margin-top: -70px;" ><img src="img/Icons/save-fill.svg"/></button> 
+                            </form>                        
+                            
+                        <?php
+                                }
+                            }else{
+                                
+                                    
+                        ?>
+
+                            <form method="POST" action="adm/salvar/salvar.php" enctype="multipart/form-data">
+                                
+                                <input type="text" class="form-control" hidden  name="id_usuario" value="<?php echo  $manipula->getUsuarioByEmail($_COOKIE['email'])[0]['id'] ?>" >
+                                <input type="text" class="form-control" hidden  name="id_pdf" value="<?= $salvoPDF['id']?>" >
+                                <button type="submit"  class="btn btn" name="acao" value="salvarPdfsInSalvarAlunos" style="margin-left:95%; margin-top: -70px;" ><img src="img/Icons/save.svg"/></button> 
+                            </form>
+                            
+                            
+                    <?php
+                                
+                            }
+                        
+                                
+                        
+                    
+                    ?> 
+                   </div>  
+                   </div>
+                   </div>
                 </a>
                 
                     </div>
@@ -127,19 +176,72 @@ $manipula = new manipuladados();
                 }
 
             ?>
-                
+            <div class="container-fluid"> 
+                <div>
+                    
                         <div id="textos">
                             <img src="<?= $manipula->getTextosByUsuariosID($salvoTxt['id_usuario'])[0]['img_capa']?>" style="object-fit: cover; width: 45px; height: 45px; border-radius: 50%">
                         </div>
                         <div style="margin-left: 50px; margin-top: -30px;">
                             <h6><?= $manipula->getTextosByUsuariosID($salvoTxt['id_usuario'])[0]['nome']?></h6>
-                        </div>  
+                        </div>
+                        <div>
+                        <?php
+                        
+                        $salvos2 = new manipuladados();
+
+                        $salvos2->setTable("tb_salvos");
+                        $salvo2 = $salvos2->getSalvoPorIDText($salvoTxt['id']);
+                    
+                        if($salvo2[0]['id_texto'] == $salvoTxt['id']){
+                            
+                            if( $salvo2[0]['id_usuario'] == $manipula->getUsuarioByEmail($_COOKIE['email'])[0]['id'] ){
+                
+                                    
+                                
+                        ?> 
+                        
+                            <form method="POST" action="adm/salvar/salvar.php" enctype="multipart/form-data">
+                                
+                                <input type="text" class="form-control" hidden  name="id" value="<?= $salvo2[0]['id']?>" >
+                                <button type="submit"  class="btn btn" name="acao" value="deletarTextosInSalvarAlunos" style="margin-left:95%; margin-top: -70px;" ><img src="img/Icons/save-fill.svg"/></button> 
+                            </form>                        
+                            
+                        <?php
+                                }
+                            }else{
+                                
+                                    
+                        ?>
+
+                            <form method="POST" action="adm/salvar/salvar.php" enctype="multipart/form-data">
+                                
+                                <input type="text" class="form-control" hidden  name="id_usuario" value="<?php echo  $manipula->getUsuarioByEmail($_COOKIE['email'])[0]['id'] ?>" >
+                                <input type="text" class="form-control" hidden  name="id_texto" value="<?= $salvoTxt['id']?>" >
+                                <button type="submit"  class="btn btn" name="acao" value="salvarTextoInSalvarAlunos" style="margin-left:95%; margin-top: -70px;" ><img src="img/Icons/save.svg"/></button> 
+                            </form>
+                            
+                            
+                    <?php
+                                
+                            }
+                        
+                                
+                        
+                    
+                    ?> 
+                    </div>
+                    </div> 
+                    </div>
                     </a>
                     <a href="?secoes=conteudos&textoId=<?= $salvoTxt['id']?>" style="text-decoration: none; color: black;">
+
                         </div>
+                        <div style="margin-left: 2%; margin-right: 2%;">
                             <h5 class="card-title"><?= $salvoTxt['titulo']?></h5>
                             Resumo
                             <p class="card-text"><?= $salvoTxt['resumo']?></p>
+                            </div>
                         </div>
                     </a>
                

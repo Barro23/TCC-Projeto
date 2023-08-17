@@ -29,6 +29,7 @@
                 }
 
             ?>
+                
                     <div>
                         <img src="<?= $manipula->getTextosByUsuariosID($texto[0]['id_usuario'])[0]['img_capa']?>" style="object-fit: cover; width: 45px; height: 45px; border-radius: 50%">
                     </div>
@@ -38,12 +39,14 @@
                 </a>
                 
                 </div>
-                    <h5 class="card-title"><?= $texto[0]['titulo']?></h5>
-                    Resumo
-                    <p class="card-text"><?= $texto[0]['resumo']?></p>
-                    Texto
-                    <p class="card-text"><?= $texto[0]['texto']?></p>
-                    
+                    <div style="margin-left: 3%; margin-right: 3%;">
+                        <h5 class="card-title"><?= $texto[0]['titulo']?></h5>
+                        <p><h6>Resumo</h6></p>
+
+                        <p class="card-text"><?= $texto[0]['resumo']?></p>
+                        <p><h6>Texto</h6></p>
+                        <p class="card-text"><?= $texto[0]['texto']?></p>
+                    </div>
                 </div>
              
             </div>
