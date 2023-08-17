@@ -135,6 +135,18 @@
             
             return $listaresp;
         }
+        public function getSalvoPorID($id_usuario){
+            $this->sql = "SELECT * FROM tb_salvos WHERE id_usuario = $id_usuario;";
+            $this->qr = self::exeSQL($this->sql);
+    
+            $listaresp = array();
+    
+            while($row = @mysqli_fetch_assoc($this->qr)){
+                array_push($listaresp, $row);
+            }
+            
+            return $listaresp;
+        }
         public function getTextoPorID($id){
             $this->sql = "SELECT * FROM tb_textos WHERE id = $id;";
             $this->qr = self::exeSQL($this->sql);
