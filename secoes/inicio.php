@@ -38,7 +38,7 @@
               <p><h2 >A educação ambiental é um processo de reconhecimento de valores e clarificações de conceitos, objetivando o desenvolvimento das habilidades e modificando as atitudes em relação ao meio, para entender e apreciar as inter-relações entre os seres humanos, suas culturas e seus meios biofísicos.</h2> </p> 
             </div>
 
-            <div class="col" style="height:450px;">
+            <div class="col" style="height:400px;">
                     <img src="img/arvore.png"  style="object-fit: cover; width: 100%; ">
             </div>
             

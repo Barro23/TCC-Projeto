@@ -97,6 +97,7 @@ $isset = IsSet($_COOKIE['email']);
                   <ul class="dropdown-menu">
                     <li><a class="dropdown-item" href="?secoes=perfil">Perfil</a></li>
                     <li><a class="dropdown-item" href="?secoes=publicacoes">Suas Publicações</a></li>
+                    <li><a class="dropdown-item" href="?secoes=salvosProf">Salvos</a></li>
                     <li><a class="dropdown-item" href="adm/login/sair.php">Sair</a></li>
                   </ul>
                 </li>

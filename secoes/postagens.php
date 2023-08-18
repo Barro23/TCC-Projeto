@@ -61,10 +61,10 @@
 
                         $salvos->setTable("tb_salvos");
                         $salvo = $salvos->getSalvoPorIDText($textos['id']);
-                    
+                     if( $salvo[0]['id_usuario'] == $post->getUsuarioByEmail($_COOKIE['email'])[0]['id'] ){
                         if($salvo[0]['id_texto'] == $textos['id']){
                             
-                            if( $salvo[0]['id_usuario'] == $post->getUsuarioByEmail($_COOKIE['email'])[0]['id'] ){
+                           
                 
                                     
                                 
@@ -169,10 +169,10 @@
 
                         $salvos->setTable("tb_salvos");
                         $salvo = $salvos->getSalvoPorIDPdf($pdfs['id']);
-
-                        if($salvo[0]['id_pdf'] == $pdfs['id']){
+                        if( $salvo[0]['id_usuario'] == $post->getUsuarioByEmail($_COOKIE['email'])[0]['id'] ){
+                            if($salvo[0]['id_pdf'] == $pdfs['id']){
                             
-                            if( $salvo[0]['id_usuario'] == $post->getUsuarioByEmail($_COOKIE['email'])[0]['id'] ){
+                            
                 
                                     
                                 
