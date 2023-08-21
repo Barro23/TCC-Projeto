@@ -17,6 +17,9 @@ $manipula = new manipuladados();
         <li class="nav-item">
             <a class="nav-link active" aria-current="page" href="#pdf">PDfs Salvos</a>
         </li>
+        <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="#jogos">Jogos Salvos</a>
+        </li>
     </ul>
 
    
@@ -31,6 +34,7 @@ $manipula = new manipuladados();
         $salvos->setTable("tb_salvos");
 
         foreach($salvos->getAllDataTable() as $salvo){
+            error_reporting(0);
 
             if($manipula->getUsuarioByEmail($_COOKIE['email'])[0]['id'] == $salvo['id_usuario']){
                 $salvosPDF = new manipuladados();

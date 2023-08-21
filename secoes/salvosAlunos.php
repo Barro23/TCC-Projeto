@@ -34,7 +34,7 @@ $manipula = new manipuladados();
         $salvos->setTable("tb_salvos");
 
         foreach($salvos->getAllDataTable() as $salvo){
-
+            error_reporting(0);
             if($manipula->getUsuarioByEmail($_COOKIE['email'])[0]['id'] == $salvo['id_usuario']){
                 $salvosPDF = new manipuladados();
 
