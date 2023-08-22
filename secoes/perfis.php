@@ -13,6 +13,11 @@
                 <div class="card-body">
                     
                     <img src="<?= $perfil[0]['img_capa'] ?>" style="object-fit: fill; background-color: white; width: 140px; height: 140px; border-radius: 50%; border: solid 4px white; position: relative; margin-top: -100px;">
+                    <form method="POST" action="adm/chats/chat.php" >      
+                        <input type="text" class="form-control" hidden  name="id_usuario1" value="<?= $manipula->getUsuarioByEmail($_COOKIE['email'])[0]['id'] ?>" >                      
+                        <input type="text" class="form-control" hidden  name="id_usuario2" value="<?= $perfil[0]['id']?>" >
+                        <button type="submit"  class="btn btn" name="acao" value="criarChat" style="margin-left:90%; margin-top: -70px;" ><img src="img/Icons/chat-text-fill.svg"/></button> 
+                    </form> 
                     <h1 class="card-title"><?= $perfil[0]['nome'] ?></h1>
                     <p><h5 class="card-title">Nome: <?= $perfil[0]['nome_completo'] ?></h5></p>
                     <p class="card-text">Sobre: <?= $perfil[0]['descricao'] ?></p>

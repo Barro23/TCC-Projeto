@@ -212,6 +212,40 @@
             
             return $listaresp;
         }
+        public function getChatsPorUsuarios($id_usuario){
+            $this->sql = "SELECT * FROM tb_chats WHERE id_usuario1 = $id_usuario OR id_usuario2 = $id_usuario;";
+            $this->qr = self::exeSQL($this->sql);
+    
+            $listaresp = array();
+    
+            while($row = @mysqli_fetch_assoc($this->qr)){
+                array_push($listaresp, $row);
+            }
+            
+            return $listaresp;
+        }
+        public function procurarChats($id_usuario1, $id_usuario2 ){
+
+            $this->sql = "SELECT * FROM tb_chats WHERE id_usuario1 = $id_usuario1 AND id_usuario2 = $id_usuario2; ";
+            $this->qr = self::exeSQL($this->sql);
+            $linhas = @mysqli_num_rows($this->qr);
+            return $linhas;
+        }
+        public function getMensagens($id_chat){
+
+            $this->sql = "SELECT * FROM tb_mensagens WHERE id_chat = $id_chat ";
+            $this->qr = self::exeSQL($this->sql);
+    
+            $listaresp = array();
+    
+            while($row = @mysqli_fetch_assoc($this->qr)){
+                array_push($listaresp, $row);
+            }
+            
+            return $listaresp;
+        
+        }
+    
     }
 
         
