@@ -28,6 +28,11 @@
 
             $this->status = self::exeSQL($this->sql) ? "cadastrado com sucesso" : "deu erro chapa".mysql_error();
         }
+        public function insertMensagens($id_usuario, $id_chat, $mensagem){
+            $this->sql = "INSERT INTO tb_mensagens(id_usuario, id_chat, mensagem) VALUES ('{$id_usuario}','{$id_chat}','{$mensagem}')";
+
+            $this->status = self::exeSQL($this->sql) ? "cadastrado com sucesso" : "deu erro chapa".mysql_error();
+        }
         public function updateUser($id, $nome, $nome_completo, $instituto, $descricao, $data_nascimento, $email,$senha,$tipo, $url_local1, $url_local2){
             $this->sql = "UPDATE tb_usuario SET nome ='".$nome."', nome_completo = '".$nome_completo."' , instituto = '".$instituto."', descricao = '".$descricao."', data_nascimento = '".$data_nascimento."', email = '".$email."', senha = '".$senha."', tipo = '".$tipo."' ,img_capa = '".$url_local1."' ,img_fundo = '".$url_local2."' WHERE $id = id ";
             $this->qr = self::exeSQL($this->sql);
@@ -151,8 +156,8 @@
             
             return $listaresp;
         }
-        public function getSalvoPorIDText($id_texto){
-            $this->sql = "SELECT * FROM tb_salvos WHERE id_texto = $id_texto;";
+        public function getSalvoPorIDText($id_texto, $id_usuario){
+            $this->sql = "SELECT * FROM tb_salvos WHERE id_texto = $id_texto AND id_usuario = $id_usuario;";
             $this->qr = self::exeSQL($this->sql);
     
             $listaresp = array();
@@ -163,8 +168,8 @@
             
             return $listaresp;
         }
-        public function getSalvoPorIDPdf($id_pdf){
-            $this->sql = "SELECT * FROM tb_salvos WHERE id_pdf = $id_pdf;";
+        public function getSalvoPorIDPdf($id_pdf, $id_usuario){
+            $this->sql = "SELECT * FROM tb_salvos WHERE id_pdf = $id_pdf AND id_usuario = $id_usuario;";
             $this->qr = self::exeSQL($this->sql);
     
             $listaresp = array();
@@ -231,6 +236,27 @@
             $linhas = @mysqli_num_rows($this->qr);
             return $linhas;
         }
+        public function procurarChats2($id_usuario3, $id_usuario4 ){
+
+            $this->sql = "SELECT * FROM tb_chats WHERE id_usuario1 = $id_usuario3 AND id_usuario2 = $id_usuario4; ";
+            $this->qr = self::exeSQL($this->sql);
+            $linhas = @mysqli_num_rows($this->qr);
+            return $linhas;
+        }
+        public function procurarChatsMostrarID($id_usuario1, $id_usuario2 , $id_usuario3, $id_usuario4){
+
+            $this->sql = "SELECT * FROM tb_chats WHERE id_usuario1 = $id_usuario1 AND id_usuario2 = $id_usuario2 OR id_usuario1 = $id_usuario3 AND id_usuario2 = $id_usuario4 ";
+            $this->qr = self::exeSQL($this->sql);
+            $listaresp = array();
+    
+            while($row = @mysqli_fetch_assoc($this->qr)){
+                array_push($listaresp, $row);
+            }
+            
+            return $listaresp;
+        
+        }
+        
         public function getMensagens($id_chat){
 
             $this->sql = "SELECT * FROM tb_mensagens WHERE id_chat = $id_chat ";

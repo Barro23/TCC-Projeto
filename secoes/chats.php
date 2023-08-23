@@ -12,7 +12,7 @@
            
                     
        
-                <a href="?secoes=chat&IdChat=<?= $chats['id'] ?>" style="text-decoration: none; color: black;">
+                <a href="?secoes=chat&IdChat=<?= $chats['id'] ?>#env" style="text-decoration: none; color: black;">
 
                 <h1><?= $chats['id'] ?></h1>
 

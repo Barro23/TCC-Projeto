@@ -60,8 +60,11 @@
                         $salvos = new manipuladados();
 
                         $salvos->setTable("tb_salvos");
-                        $salvo = $salvos->getSalvoPorIDText($textos['id']);
-                           
+                    
+                        $id_texto = $textos['id'];
+                        $id_usuario = $post->getUsuarioByEmail($_COOKIE['email'])[0]['id'];
+                        $salvo = $salvos->getSalvoPorIDText($id_texto, $id_usuario );
+                        
                             if( $salvo[0]['id_usuario'] == $post->getUsuarioByEmail($_COOKIE['email'])[0]['id'] ){
                            
                             
@@ -169,9 +172,11 @@
                         $salvos = new manipuladados();
 
                         $salvos->setTable("tb_salvos");
-                        $salvo = $salvos->getSalvoPorIDPdf($pdfs['id']);
+                        $id_pdf = $pdfs['id'];
+                        $id_usuario = $post->getUsuarioByEmail($_COOKIE['email'])[0]['id'];
+                        $salvo = $salvos->getSalvoPorIDPdf($id_pdf, $id_usuario );
                         if( $salvo[0]['id_usuario'] == $post->getUsuarioByEmail($_COOKIE['email'])[0]['id'] ){
-                            if($salvo[0]['id_pdf'] == $pdfs['id']){
+                            
                             
                             
                 
@@ -186,7 +191,7 @@
                             </form>                        
                             
                         <?php
-                                }
+                                
                             }else{
                                 
                                     

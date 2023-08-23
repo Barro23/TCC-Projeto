@@ -1,3 +1,7 @@
+<div class="container">
+        <div class="card mb-3">
+            <div class="container" style="height:700px; width:100%; overflow:auto; padding:2%">
+            
 <?php
 
     $manipula = new manipuladados;
@@ -8,25 +12,50 @@
 
 
 ?>
-    <div class="container card mb-3" style="width: 100%;">
-        <div class="card-body">
-      
-                <h3><?= $mensagem['id_usuario'] ?></h3>
-                <h1><?= $mensagem['mensagem'] ?></h1>
-
+    
+        <?php
+            if($mensagem['id_usuario'] == $manipula->getUsuarioByEmail($_COOKIE['email'])[0]['id']){
+        ?>
+            <div class="container card mb-3" style="width: fit-content; height: fit-content; margin-right: 10%; background-color: #a8d8a8;">
+                <div class="card-body ">
+                    <h6><?= $mensagem['id_usuario'] ?></h3>
+                    <h4><?= $mensagem['mensagem'] ?></h1>
                 <br/>
       
-            </div>   
-        </div>
-
+                </div>   
+            </div>
+            
+        <?php
+            }else{
+        ?>
+            <div class="container card mb-3" style="width: fit-content; height: fit-content; margin-left: 10%; background-color: #262e2a71;">
+                <div class="card-body ">
+                    <h6><?= $mensagem['id_usuario'] ?></h3>
+                    <h4><?= $mensagem['mensagem'] ?></h1>
+                <br/>
+      
+                </div>   
+            </div>
+            
+        <?php
+            }
+        ?>
+        
 <?php
     }
 ?>
-<div class="container">
+            <h1 id=env style="position: relative; margin-top:-710px; "></h1>
+        
+        </div>
+    </div>
+</div>
+
+
+<div class="container" >
     <form class="d-flex" method="POST" action="adm/chats/chat.php" >      
         <input type="text" class="form-control" hidden  name="id_usuario" value="<?= $manipula->getUsuarioByEmail($_COOKIE['email'])[0]['id'] ?>" >                      
-        <input type="text" class="form-control" hidden  name="id_chat" value="<?= $mensagem['id_chat'] ?>" >
-        <input type="text" class="form-control"  name="mensagem" value="" >   
+        <input type="text" class="form-control" hidden  name="id_chat" value="<?= $_GET['IdChat'] ?>" >
+        <input type="text" class="form-control"  name="mensagem">   
         <button type="submit"  class="btn btn" name="acao" value="addMensagem" style="" ><img src="img/Icons/send-fill.svg"/></button> 
     </form>
 </div>

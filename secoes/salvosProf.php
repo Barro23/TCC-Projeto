@@ -1,13 +1,9 @@
-
-
-
-
 <?php
 
 
 include_once("dao/manipuladados.php");
 $manipula = new manipuladados();
-
+error_reporting(0);
 ?>
 <div class="container">
     <ul class="nav nav-tabs">
@@ -16,9 +12,6 @@ $manipula = new manipuladados();
         </li>
         <li class="nav-item">
             <a class="nav-link active" aria-current="page" href="#pdf">PDfs Salvos</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="#jogos">Jogos Salvos</a>
         </li>
     </ul>
 
@@ -32,18 +25,15 @@ $manipula = new manipuladados();
         $salvos = new manipuladados();
 
         $salvos->setTable("tb_salvos");
-
+   
         foreach($salvos->getAllDataTable() as $salvo){
-            error_reporting(0);
-
+          
             if($manipula->getUsuarioByEmail($_COOKIE['email'])[0]['id'] == $salvo['id_usuario']){
                 $salvosPDF = new manipuladados();
 
                 $salvosPDF->setTable("tb_pdf");
 
-                $salvosTxt = new manipuladados();
-
-                $salvosTxt->setTable("tb_textos");
+                
 
                 foreach($salvosPDF->getAllDataTable() as $salvoPDF){
 
@@ -86,11 +76,11 @@ $manipula = new manipuladados();
                         $salvos = new manipuladados();
 
                         $salvos->setTable("tb_salvos");
-                        $salvo = $salvos->getSalvoPorIDPdf($salvoPDF['id']);
-
-                        if($salvo[0]['id_pdf'] == $salvoPDF['id']){
+                        $id_pdf = $salvoPDF['id'];
+                        $id_usuario = $manipula->getUsuarioByEmail($_COOKIE['email'])[0]['id'];
+                        $salvo = $salvos->getSalvoPorIDPdf($id_pdf, $id_usuario );
+                        if( $salvo[0]['id_usuario'] == $manipula->getUsuarioByEmail($_COOKIE['email'])[0]['id'] ){
                             
-                            if( $salvo[0]['id_usuario'] == $manipula->getUsuarioByEmail($_COOKIE['email'])[0]['id'] ){
                 
                                     
                                 
@@ -99,11 +89,11 @@ $manipula = new manipuladados();
                             <form method="POST" action="adm/salvar/salvar.php" enctype="multipart/form-data">
                                 
                                 <input type="text" class="form-control" hidden  name="id" value="<?= $salvo[0]['id']?>" >
-                                <button type="submit"  class="btn btn" name="acao" value="deletarPdfsInSalvarAlunos" style="margin-left:95%; margin-top: -70px;" ><img src="img/Icons/save-fill.svg"/></button> 
+                                <button type="submit"  class="btn btn" name="acao" value="deletarPdfsInSalvarProfs" style="margin-left:95%; margin-top: -70px;" ><img src="img/Icons/save-fill.svg"/></button> 
                             </form>                        
                             
                         <?php
-                                }
+                                
                             }else{
                                 
                                     
@@ -113,16 +103,13 @@ $manipula = new manipuladados();
                                 
                                 <input type="text" class="form-control" hidden  name="id_usuario" value="<?php echo  $manipula->getUsuarioByEmail($_COOKIE['email'])[0]['id'] ?>" >
                                 <input type="text" class="form-control" hidden  name="id_pdf" value="<?= $salvoPDF['id']?>" >
-                                <button type="submit"  class="btn btn" name="acao" value="salvarPdfsInSalvarAlunos" style="margin-left:95%; margin-top: -70px;" ><img src="img/Icons/save.svg"/></button> 
+                                <button type="submit"  class="btn btn" name="acao" value="salvarPdfsInSalvarProfs" style="margin-left:95%; margin-top: -70px;" ><img src="img/Icons/save.svg"/></button> 
                             </form>
                             
                             
                     <?php
                                 
-                            }
-                        
-                                
-                        
+                            }            
                     
                     ?> 
                    </div>  
@@ -147,7 +134,14 @@ $manipula = new manipuladados();
              
                
         <?php
+
+            if($manipula->getUsuarioByEmail($_COOKIE['email'])[0]['id'] == $salvo['id_usuario']){
                     
+            $salvosTxt = new manipuladados();
+
+            $salvosTxt->setTable("tb_textos");
+
+
            foreach($salvosTxt->getAllDataTable() as $salvoTxt){
                 if($salvoTxt['id'] == $salvo['id_texto']){
 
@@ -188,15 +182,19 @@ $manipula = new manipuladados();
                         </div>
                         <div>
                         <?php
-                        
-                        $salvos2 = new manipuladados();
+        
 
-                        $salvos2->setTable("tb_salvos");
-                        $salvo2 = $salvos2->getSalvoPorIDText($salvoTxt['id']);
+                       
+
+                        $salvos = new manipuladados();
+
+                        $salvos->setTable("tb_salvos");
                     
-                        if($salvo2[0]['id_texto'] == $salvoTxt['id']){
-                            
-                            if( $salvo2[0]['id_usuario'] == $manipula->getUsuarioByEmail($_COOKIE['email'])[0]['id'] ){
+                        $id_texto = $salvoTxt['id'];
+                        $id_usuario = $manipula->getUsuarioByEmail($_COOKIE['email'])[0]['id'];
+                        $salvo = $salvos->getSalvoPorIDText($id_texto, $id_usuario );
+                           
+                            if( $salvo[0]['id_usuario'] == $manipula->getUsuarioByEmail($_COOKIE['email'])[0]['id'] ){
                 
                                     
                                 
@@ -204,12 +202,12 @@ $manipula = new manipuladados();
                         
                             <form method="POST" action="adm/salvar/salvar.php" enctype="multipart/form-data">
                                 
-                                <input type="text" class="form-control" hidden  name="id" value="<?= $salvo2[0]['id']?>" >
-                                <button type="submit"  class="btn btn" name="acao" value="deletarTextosInSalvarAlunos" style="margin-left:95%; margin-top: -70px;" ><img src="img/Icons/save-fill.svg"/></button> 
+                                <input type="text" class="form-control" hidden  name="id" value="<?= $salvo[0]['id']?>" >
+                                <button type="submit"  class="btn btn" name="acao" value="deletarTextosInSalvarProfs" style="margin-left:95%; margin-top: -70px;" ><img src="img/Icons/save-fill.svg"/></button> 
                             </form>                        
                             
                         <?php
-                                }
+                                
                             }else{
                                 
                                     
@@ -219,7 +217,7 @@ $manipula = new manipuladados();
                                 
                                 <input type="text" class="form-control" hidden  name="id_usuario" value="<?php echo  $manipula->getUsuarioByEmail($_COOKIE['email'])[0]['id'] ?>" >
                                 <input type="text" class="form-control" hidden  name="id_texto" value="<?= $salvoTxt['id']?>" >
-                                <button type="submit"  class="btn btn" name="acao" value="salvarTextoInSalvarAlunos" style="margin-left:95%; margin-top: -70px;" ><img src="img/Icons/save.svg"/></button> 
+                                <button type="submit"  class="btn btn" name="acao" value="salvarTextoInSalvarProfs" style="margin-left:95%; margin-top: -70px;" ><img src="img/Icons/save.svg"/></button> 
                             </form>
                             
                             
@@ -227,9 +225,7 @@ $manipula = new manipuladados();
                                 
                             }
                         
-                                
-                        
-                    
+
                     ?> 
                     </div>
                     </div> 
@@ -247,6 +243,8 @@ $manipula = new manipuladados();
                     </a>
                
         <?php
-           }  }
+                    }
+                }  
+            }
         }
         ?> 
