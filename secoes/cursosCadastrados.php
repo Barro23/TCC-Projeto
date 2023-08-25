@@ -13,11 +13,24 @@
                     
        
                 <a href="?secoes=semanas&IdCurso=<?= $cursos ['id_curso'] ?>" style="text-decoration: none; color: black;">
-                <h3><?= $cursos['id_curso'] ?></h3>
-                <h1><?= $cursos['status'] ?></h1>
+                    <h3><?= $cursos['id_curso'] ?></h3>
+                    
+                
+                <?php
+                    foreach($manipula->getCursos($cursos['id_curso']) as $curso ){
+                        if($cursos['semana'] > $curso['semanas']){
+                ?>
+                        <h1>concluido</h1>
+                <?php
+                        }else{
+                ?>
+                        <h1>andamento</h1>
 
+                <?php
+                        }
+                    }
+                ?>
                 </a>
-        
             </div>   
         </div>
 

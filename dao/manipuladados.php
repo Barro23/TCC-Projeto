@@ -28,11 +28,7 @@
 
             $this->status = self::exeSQL($this->sql) ? "cadastrado com sucesso" : "deu erro chapa".mysql_error();
         }
-        public function insertMensagens($id_usuario, $id_chat, $mensagem){
-            $this->sql = "INSERT INTO tb_mensagens(id_usuario, id_chat, mensagem) VALUES ('{$id_usuario}','{$id_chat}','{$mensagem}')";
-
-            $this->status = self::exeSQL($this->sql) ? "cadastrado com sucesso" : "deu erro chapa".mysql_error();
-        }
+        
         public function updateUser($id, $nome, $nome_completo, $instituto, $descricao, $data_nascimento, $email,$senha,$tipo, $url_local1, $url_local2){
             $this->sql = "UPDATE tb_usuario SET nome ='".$nome."', nome_completo = '".$nome_completo."' , instituto = '".$instituto."', descricao = '".$descricao."', data_nascimento = '".$data_nascimento."', email = '".$email."', senha = '".$senha."', tipo = '".$tipo."' ,img_capa = '".$url_local1."' ,img_fundo = '".$url_local2."' WHERE $id = id ";
             $this->qr = self::exeSQL($this->sql);
@@ -61,6 +57,10 @@
         }
         public function deleteSalvos($id){
             $this->sql = "DELETE FROM tb_salvos WHERE id = '".$id."'";
+            $this->qr = self::exeSQL($this->sql);
+        }
+        public function updateSemana($id_curso, $id_usuario, $semana ){
+            $this->sql = "UPDATE tb_cursando SET semana = '".$semana."' WHERE $id_curso = id_curso and $id_usuario = id_usuario";
             $this->qr = self::exeSQL($this->sql);
         }
         /*** 
@@ -322,6 +322,18 @@
         }
         public function getCursando($id_curso, $id_usuario){
             $this->sql = "SELECT * FROM tb_cursando WHERE id_curso = $id_curso AND id_usuario = $id_usuario ;";
+            $this->qr = self::exeSQL($this->sql);
+    
+            $listaresp = array();
+    
+            while($row = @mysqli_fetch_assoc($this->qr)){
+                array_push($listaresp, $row);
+            }
+            
+            return $listaresp;
+        }
+        public function getCursos($id_curso){
+            $this->sql = "SELECT * FROM tb_curso WHERE id = $id_curso ;";
             $this->qr = self::exeSQL($this->sql);
     
             $listaresp = array();

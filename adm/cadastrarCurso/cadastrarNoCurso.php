@@ -11,14 +11,14 @@
         $id_usuario = $_POST["id_usuario"];
         $id_curso = $_POST["id_curso"];
         $semana = $_POST["semana"];
-        $status = $_POST["status"];
+        
     
         
 
         $cadastrar = new manipuladados();
         $cadastrar->setTable("tb_cursando");
-        $cadastrar->setFields("id_usuario, id_curso, semana,  status");
-        $cadastrar->setDados("'$id_usuario', '$id_curso', '$semana', ' $status'");
+        $cadastrar->setFields("id_usuario, id_curso, semana");
+        $cadastrar->setDados("'$id_usuario', '$id_curso', '$semana'");
         $cadastrar->insert();
 
 
@@ -27,29 +27,17 @@
 
         
         
-    }if ($acao == "atualizar"){
-        $id = $_POST["id"];
+    }if ($acao == "atualizarSemana"){
         $id_usuario = $_POST["id_usuario"];
-        $titulo = $_POST["titulo"];
-        $resumo = $_POST["resumo"];
-        $texto = $_POST["texto"];
+        $id_curso = $_POST["id_curso"];
+        $semana = $_POST["semana"];
+
         
+        $atualizarSemana = new manipuladados();
+        $atualizarSemana->updateSemana($id_curso, $id_usuario, $semana);
 
-        $atualizar = new manipuladados();
-      
-        $atualizar->updateText($id, $id_usuario, $titulo, $resumo, $texto);
-
-
-
-        echo '<script>alert("Atualização efetuada com Sucesso!");</script>';
-        echo '<script>location ="../../?secoes=perfil";</script>';
-    }if ($acao == "apagar"){
-        $id =  $_POST["id"];
-        $deletar = new manipuladados();
-        $deletar->deleteText($id);
-
-        echo '<script>alert("Apagado com Sucesso!");</script>';
-        echo '<script>location ="../../?secoes=perfil";</script>';
+        echo '<script>alert("Parabéns, modulo completado com Sucesso!");</script>';
+        header("location:../../?secoes=semanas&IdCurso=".$id_curso);
 
     }
     

@@ -63,7 +63,7 @@
                     <input type="text"  hidden  name="id_usuario" value="<?php echo  $curso->getUsuarioByEmail($_COOKIE['email'])[0]['id'] ?>" >
                     <input type="text"  hidden  name="id_curso" value="<?= $cursos['id']?>" >
                     <input type="text" hidden  name="semana" value="1">
-                    <input type="text"  hidden name="status" value="andamento"> 
+                   
     
 
                        
