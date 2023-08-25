@@ -64,6 +64,7 @@ $isset = IsSet($_COOKIE['email']);
                 <ul class="dropdown-menu">
                   <li><a class="dropdown-item" href="?secoes=perfil">Perfil</a></li>
                   <li><a class="dropdown-item" href="?secoes=salvosAlunos">Salvos</a></li>
+                  <li><a class="dropdown-item" href="?secoes=cursosCadastrados">Seus Cursos</a></li>
                   <li><a class="dropdown-item" href="?secoes=chats">Conversas</a></li>
                   <li><a class="dropdown-item" href="adm/login/sair.php">Sair</a></li>
                 </ul>
@@ -71,7 +72,7 @@ $isset = IsSet($_COOKIE['email']);
                 <a class="nav-link active" aria-current="page" href="?secoes=jogos">Jogos</a>
               </li>
               <li class="nav-item">
-                  <a class="nav-link active" aria-current="page" href="?secoes=curso">Cursos</a>
+                  <a class="nav-link active" aria-current="page" href="?secoes=cursos">Cursos</a>
               </li>
               <li class="nav-item">
                   <a class="nav-link active" aria-current="page" href="?secoes=postagens">Comunidade</a>
@@ -99,12 +100,13 @@ $isset = IsSet($_COOKIE['email']);
                     <li><a class="dropdown-item" href="?secoes=perfil">Perfil</a></li>
                     <li><a class="dropdown-item" href="?secoes=publicacoes">Suas Publicações</a></li>
                     <li><a class="dropdown-item" href="?secoes=salvosProf">Salvos</a></li>
+                    <li><a class="dropdown-item" href="?secoes=cursosCadastrados">Seus Cursos</a></li>
                     <li><a class="dropdown-item" href="?secoes=chats">Conversas</a></li>
                     <li><a class="dropdown-item" href="adm/login/sair.php">Sair</a></li>
                   </ul>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link active" aria-current="page" href="?secoes=curso">Cursos</a>
+                  <a class="nav-link active" aria-current="page" href="?secoes=cursos">Cursos</a>
                 </li>
                 <li class="nav-item">
                   <a class="nav-link active" aria-current="page" href="?secoes=postagens">Comunidade</a>

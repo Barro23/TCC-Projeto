@@ -23,7 +23,7 @@
 
 
         echo '<script>alert("Cadastrado com Sucesso!");</script>';
-        echo '<script>location ="../../?secoes=perfil";</script>';
+        echo '<script>location ="../../?secoes=cursosCadastrados";</script>';
 
         
         

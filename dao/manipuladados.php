@@ -283,6 +283,43 @@
             return $listaresp;
         
         }
+
+        public function getCursosPorUsuarios($id_usuario){
+            $this->sql = "SELECT * FROM tb_cursando WHERE id_usuario = $id_usuario ;";
+            $this->qr = self::exeSQL($this->sql);
+    
+            $listaresp = array();
+    
+            while($row = @mysqli_fetch_assoc($this->qr)){
+                array_push($listaresp, $row);
+            }
+            
+            return $listaresp;
+        }
+        public function getSemanasPorCurso($id_curso){
+            $this->sql = "SELECT * FROM tb_semanas WHERE id_curso = $id_curso ;";
+            $this->qr = self::exeSQL($this->sql);
+    
+            $listaresp = array();
+    
+            while($row = @mysqli_fetch_assoc($this->qr)){
+                array_push($listaresp, $row);
+            }
+            
+            return $listaresp;
+        }
+        public function getSemana($id){
+            $this->sql = "SELECT * FROM tb_semanas WHERE id = $id ;";
+            $this->qr = self::exeSQL($this->sql);
+    
+            $listaresp = array();
+    
+            while($row = @mysqli_fetch_assoc($this->qr)){
+                array_push($listaresp, $row);
+            }
+            
+            return $listaresp;
+        }
     
     }
 

@@ -16,7 +16,7 @@
 
         <div class="col" >
                 <div class="card h-20 " style=" width: 100%; height:250px;" >
-                    <form method="POST" action="adm/cadastrarCurso/cadastrarCurso.php" enctype="multipart/form-data">
+                    <form method="POST" action="adm/cadastrarCurso/cadastrarNoCurso.php" enctype="multipart/form-data">
                     
                    
                
