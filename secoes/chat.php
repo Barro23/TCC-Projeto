@@ -15,10 +15,12 @@
     
         <?php
             if($mensagem['id_usuario'] == $manipula->getUsuarioByEmail($_COOKIE['email'])[0]['id']){
+                $contas = new manipuladados();
+                $conta = $contas->getUsuariosPorID($mensagem['id_usuario'])
         ?>
             <div class="container card mb-3" style="width: fit-content; height: fit-content; margin-right: 10%; background-color: #a8d8a8;">
                 <div class="card-body ">
-                    <h6><?= $mensagem['id_usuario'] ?></h3>
+                    <h6><?= $conta[0]['nome'] ?></h3>
                     <h4><?= $mensagem['mensagem'] ?></h1>
                 <br/>
       
@@ -27,10 +29,12 @@
             
         <?php
             }else{
+                $contas = new manipuladados();
+                $conta = $contas->getUsuariosPorID($mensagem['id_usuario'])
         ?>
             <div class="container card mb-3" style="width: fit-content; height: fit-content; margin-left: 10%; background-color: #262e2a71;">
                 <div class="card-body ">
-                    <h6><?= $mensagem['id_usuario'] ?></h3>
+                    <h6><?= $conta[0]['nome'] ?></h3>
                     <h4><?= $mensagem['mensagem'] ?></h1>
                 <br/>
       

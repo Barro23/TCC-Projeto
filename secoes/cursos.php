@@ -65,9 +65,30 @@
                     <input type="text" hidden  name="semana" value="1">
                    
     
+                    <?php
+                        error_reporting(0);
+                        $cursar = new manipuladados();
+                        $cursando = $cursar->getCursando($cursos['id'], $curso->getUsuarioByEmail($_COOKIE['email'])[0]['id']);
+                        if($cursando[0]['id_usuario'] == $curso->getUsuarioByEmail($_COOKIE['email'])[0]['id']){
 
+                        
+                        
+                    ?>
                        
-                    <button type="submit"  name="acao" value="cadastrar-se">Cadastrar-se</button>
+                            <h3>cadastrado</h3>
+
+                    <?php
+                        
+
+                        }else{
+                        
+                    ?>
+                        <button type="submit"  name="acao" value="cadastrar-se">Cadastrar-se</button>
+                    <?php
+                        
+                        }
+                        
+                    ?>
                        
                 </form>
                     

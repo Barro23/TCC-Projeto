@@ -1,4 +1,17 @@
 <?php
+    
+        
+    if(@$_SESSION['alert'] != null){
+
+        echo '<div class="alert alert-warning alert-dismissible fade show container" role="alert">
+        <strong>Parabéns, Modulo completado!</strong>.
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+        ';   
+        $_SESSION['alert'] == null;  
+    }
+
+    
 
     include_once('dao/manipuladados.php');
     $manipula = new manipuladados();
