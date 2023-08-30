@@ -634,9 +634,15 @@ $manipula = new manipuladados();
                                                 
                                             </div>
                                         </div>
+                                   
+                                        </div>
+                                        </div>
                                     </div>
+                               
+                                        
+                                        
                                 
-                                </div>
+                            </div>
                             
                         </div>
                             
@@ -661,14 +667,15 @@ $manipula = new manipuladados();
                             
                         ?>
                         <h5>Modulo <?php echo $i + 1?> cadastrado</h5>
+                        
                         <div class="accordion accordion-flush" id="accordionFlushExample">
                             <div class="accordion-item">
                                 <h2 class="accordion-header">
-                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse00<?php echo $i + 1?>" aria-expanded="false" aria-controls="flush-collapseOne">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse0<?php echo $verIdSemana[0]['id']?>" aria-expanded="false" aria-controls="flush-collapseOne">
                                     Cadastrar Questionário <?php echo  $i + 1?>
                                 </button>
                                 </h2>
-                                <div id="flush-collapse00<?php echo $i + 1?>" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+                                <div id="flush-collapse0<?php echo $verIdSemana[0]['id']?>" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
                                 <div class="accordion-body">
                                 <div class="row">
                                     <div class="col-9">
@@ -776,18 +783,19 @@ $manipula = new manipuladados();
 
                                         
                                                             
-                                              
+                                               
                                             </form>
                                                 
                                             </div>
-                                        </div>
+                                        </div> 
                                     </div>
                                 </div>
                                 </div>
+                                </div>
+                            </div>
                             </div>
                             
-                        </div>
-                        </div>
+                            
                         <?php
                                 }else{                
                             
@@ -806,27 +814,43 @@ $manipula = new manipuladados();
                         <div>
                             <h5 class="card-title"><?= $cursos['horas']?>hs</h5>  
                         </div>
-                        
+                            
                         </div>
-                    </div>
+                    
+                    
                     
                 </div>
                 
-            </div>
+               
+      
+
+
+ 
         <?php
             
                 }
 
             }
         }
-        ?>        
+        ?>  
+      </div> 
+  
+      
+</div>
+</div>
+      
+</div>
+     
         
 <?php
     }
 ?>
+</div> 
+</div>  
+</div> 
+ 
       
-      </div>
-      </div>              
-           
-</div>
+             
+      
+
 
