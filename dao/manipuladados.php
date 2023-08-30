@@ -320,8 +320,44 @@
             
             return $listaresp;
         }
+        public function getSemanaPorCurso($id_curso){
+            $this->sql = "SELECT * FROM tb_semanas WHERE id_curso = $id_curso ;";
+            $this->qr = self::exeSQL($this->sql);
+    
+            $listaresp = array();
+    
+            while($row = @mysqli_fetch_assoc($this->qr)){
+                array_push($listaresp, $row);
+            }
+            
+            return $listaresp;
+        }
+        public function getSemanaPorSemanas($id_curso, $semana){
+            $this->sql = "SELECT * FROM tb_semanas WHERE id_curso = $id_curso AND semana = $semana ;";
+            $this->qr = self::exeSQL($this->sql);
+    
+            $listaresp = array();
+    
+            while($row = @mysqli_fetch_assoc($this->qr)){
+                array_push($listaresp, $row);
+            }
+            
+            return $listaresp;
+        }
         public function getQuestionarios($id_semana, $id_curso){
             $this->sql = "SELECT * FROM tb_questionarios WHERE id_semana = $id_semana AND id_curso = $id_curso;";
+            $this->qr = self::exeSQL($this->sql);
+    
+            $listaresp = array();
+    
+            while($row = @mysqli_fetch_assoc($this->qr)){
+                array_push($listaresp, $row);
+            }
+            
+            return $listaresp;
+        }
+        public function getQuestionariosPorSemanas($id_curso, $semanas ){
+            $this->sql = "SELECT * FROM tb_questionarios WHERE semana = $semanas AND id_curso = $id_curso;";
             $this->qr = self::exeSQL($this->sql);
     
             $listaresp = array();
@@ -357,6 +393,7 @@
             return $listaresp;
         }
         
+      
     }
 
         
