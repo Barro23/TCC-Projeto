@@ -9,7 +9,7 @@
     <meta http-equiv='X-UA-Compatible' content='IE=edge'>
     <title>ECOTEC</title>
     <meta name='viewport' content='width=device-width, initial-scale=1'>
-    <link rel="icon" type="image/png" sizes="32x32" href="img/icons/mato.svg">
+    <link rel="icon" type="image/png" sizes="32x32" href="img/icons/logoJogoESite.png">
     <link rel='stylesheet' type='text/css' href='css/bootstrap.css'>
     <link rel='stylesheet' type='text/css' href='css/app.css'>
     <script src='js/bootstrap.js'></script>

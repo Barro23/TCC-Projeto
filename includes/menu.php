@@ -8,7 +8,7 @@ $isset = IsSet($_COOKIE['email']);
 ?>
   
   <div class="container">
-    <a class="navbar-brand" href="?secoes=inicio">IMG</a>
+    <a class="navbar-brand" href="?secoes=inicio"><img src="img/icons/logoJogoESite.png"  style="object-fit: contain; width: 70px; height:70px; margin-top: -10px;"></a>
     <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon" ></span>
     </button>
