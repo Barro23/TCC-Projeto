@@ -16,6 +16,8 @@
 
         <div class="col" >
                 <div class="card h-20 " style=" width: 100%; height:250px;" >
+                    <div class="container">
+                        <br/>
                     <form method="POST" action="adm/cadastrarCurso/cadastrarNoCurso.php" enctype="multipart/form-data">
                     
                    
@@ -51,10 +53,12 @@
             }
 
         ?>
-            
-                
-                    <h5 class="card-title"><?= $cursos['titulo']?></h5>
-                    <p class="card-text"><?= $cursos['semanas']?></p>
+                    <p></p>
+                    <p>
+                        <h5 class="card-title"><?= $cursos['titulo']?></h5>
+                    </p>
+                    <p class="card-text">Semanas de Duração:  <?= $cursos['semanas']?></p>
+                    <p class="card-text">Cargar horária: <?= $cursos['horas']?> horas</p>
 
                     
                         
@@ -83,7 +87,7 @@
                         }else{
                         
                     ?>
-                        <button type="submit"  name="acao" value="cadastrar-se">Cadastrar-se</button>
+                        <button type="submit" class="btn btn-primary" name="acao" value="cadastrar-se">Cadastrar-se</button>
                     <?php
                         
                         }
@@ -94,7 +98,7 @@
                     
               
               
-       
+                </div>
             </div>
         </div>
         
