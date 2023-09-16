@@ -32,7 +32,8 @@
                 <?php
                         }else{
                 ?>
-                        <h3>em andamento</h3>
+                        <h3>Em andamento</h3>
+
 
                 <?php
                         }
