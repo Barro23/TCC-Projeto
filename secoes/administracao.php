@@ -1,14 +1,22 @@
 <div class="container" style="height:600px; width:100%; overflow:auto; padding:2%">
     <div class="row">
-    <div class="col-3">
-        <nav id="navbar-example3" class="h-100 flex-column align-items-stretch pe-4 border-end">
+  <div class="col-3">
+    <nav id="navbar-example3" class="h-100 flex-column align-items-stretch pe-4 border-end">
+      <nav class="nav nav-pills flex-column">
+        <a class="nav-link" href="#item-1">Item 1</a>
         <nav class="nav nav-pills flex-column">
-            <a class="nav-link" href="#item-1">Item 1</a>
-            <a class="nav-link" href="#item-2">Item 2</a>
-            <a class="nav-link" href="#item-3">Item 3</a> 
+          <a class="nav-link ms-3 my-1" href="#item-1-1">Item 1-1</a>
+          <a class="nav-link ms-3 my-1" href="#item-1-2">Item 1-2</a>
         </nav>
+        
+        <a class="nav-link" href="#item-2">Item 2</a>
+        <nav class="nav nav-pills flex-column">
+          <a class="nav-link ms-3 my-1" href="#item-2-1">Item 2-1</a>
+          <a class="nav-link ms-3 my-1" href="#item-2-2">Item 2-2</a>
         </nav>
-    </div>
+      </nav>
+    </nav>
+  </div>
 
     <div class="col-9">
         <div data-bs-spy="scroll" data-bs-target="#navbar-example3" data-bs-smooth-scroll="true" class="scrollspy-example-2" tabindex="0">
