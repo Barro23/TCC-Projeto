@@ -33,6 +33,29 @@
         <div id="item-1-1">
             <h4 style="margin-left: 4%;">Contas Cadastradas</h4>
             <p>
+            <?php
+                    $tipoUsuario = new manipuladados();
+
+                    $tipoUsuario->setTable("tb_usuario");
+                    $Alunos = 0;
+                    $Professores = 0;
+                    $Administrador = 0;
+                    foreach($tipoUsuario->getAllDataTable()  as $tipoUsuarios){
+                        
+                    
+                        if($tipoUsuarios['tipo']== "aluno"){
+                            $Alunos++;
+                        
+                        }else if($tipoUsuarios['tipo']== "prof"){        
+                            $Professores++;
+                        
+                        }else if($tipoUsuarios['tipo']== "adm"){        
+                            $Administrador++;
+                    
+                        }    
+                    }  
+                ?>
+
             <script>
             window.onload = function () {
 
@@ -49,12 +72,12 @@
                 data: [{
                     type: "pie",
                     showInLegend: true,
-                    toolTipContent: "{name}: <strong>{y}%</strong>",
-                    indexLabel: "{name} - {y}%",
+                    toolTipContent: "{name}: <strong>{y}</strong>",
+                    indexLabel: "{name} - {y}",
                     dataPoints: [
-                        { y: 26, name: "Estudates", exploded: true },
-                        { y: 28, name: "Professores" , exploded: true },
-                        { y: 5, name: "Administrador" },
+                        { y: <?php echo $Alunos?>, name: "Estudates", exploded: true },
+                        { y: <?php echo $Professores?>, name: "Professores" , exploded: true },
+                        { y: <?php echo $Administrador?>, name: "Administrador" },
                         
                     ]
                 }]

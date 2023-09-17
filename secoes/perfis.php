@@ -1,6 +1,7 @@
 <div class="container">
 
     <?php 
+    error_reporting(0);
     include_once('dao/manipuladados.php');
     $manipula = new manipuladados();
 
@@ -22,6 +23,30 @@
                     <p><h5 class="card-title">Nome: <?= $perfil[0]['nome_completo'] ?></h5></p>
                     <p class="card-text">Sobre: <?= $perfil[0]['descricao'] ?></p>
                     <p class="card-text">Instituição: <?= $perfil[0]['instituto'] ?></p>
+                    <?php
+                    $cursando = new manipuladados();
+
+                    $cursando->setTable("tb_cursando");
+                    $i = 0;
+                    foreach($cursando->getCursosPorUsuarios($perfil[0]['id']) as $cursados){
+                        $i++;
+                    
+                        if($i == 1){
+                            
+                        ?> 
+                        <h4 style="position: absolute; margin-left: 80%; margin-top: -190px; ">img</h4>
+                        <?php
+                            }else if($i >= 3){        
+                        ?>
+                        <h4 style="position: absolute; margin-left: 80%; margin-top: -190px; ">img1</h4>
+                        <?php
+                            }else if($i >= 6){        
+                        ?>
+                        <h4 style="position: absolute; margin-left: 80%; margin-top: -190px; ">img2</h4>
+                    <?php
+                        }    
+                    }  
+                    ?>
                   
                 </div>
             </div>
