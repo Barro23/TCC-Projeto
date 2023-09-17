@@ -28,24 +28,27 @@
 
                     $cursando->setTable("tb_cursando");
                     $i = 0;
+                   
                     foreach($cursando->getCursosPorUsuarios($perfil[0]['id']) as $cursados){
                         $i++;
-                    
-                        if($i == 1){
+                    }
+                        if($i >= 1 AND $i < 3){
                             
                         ?> 
-                        <h4 style="position: absolute; margin-left: 80%; margin-top: -190px; ">img</h4>
+                        
+                        <img   src="img/icons/rank1.png" title="Novato" style="position: absolute; margin-left: 80%; margin-top: -190px; height: 13%; ">
                         <?php
-                            }else if($i >= 3){        
+                            }else if($i >= 3 AND $i < 6){        
                         ?>
-                        <h4 style="position: absolute; margin-left: 80%; margin-top: -190px; ">img1</h4>
+                        <img style="position: absolute; margin-left: 80%; margin-top: -190px; height: 13%;" title="Experiente" src="img/icons/rank2.png">img</img>
                         <?php
                             }else if($i >= 6){        
                         ?>
-                        <h4 style="position: absolute; margin-left: 80%; margin-top: -190px; ">img2</h4>
+                        <img style="position: absolute; margin-left: 80%; margin-top: -190px; height: 13%; " title="Mestre" src="img/icons/rank3.png">img</img>
                     <?php
                         }    
-                    }  
+                    
+
                     ?>
                   
                 </div>
