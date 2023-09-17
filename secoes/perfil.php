@@ -7,6 +7,7 @@ $manipula = new manipuladados();
 
 ?>
 <div class="container"> 
+    
     <div class="card mb-3" style="">
         <img src="<?php echo  $manipula->getUsuarioByEmail($_COOKIE['email'])[0]['img_fundo'] ?>" class="card-img-top" style="object-fit: cover; height: 150px; ">
         <div class="card-body">
@@ -19,7 +20,6 @@ $manipula = new manipuladados();
 
                 <div class="modal-body">
                     <img src="<?php echo  $manipula->getUsuarioByEmail($_COOKIE['email'])[0]['img_capa'] ?>" style="object-fit: cover;  width: 100%;  height: 100%; border-radius: 2%;">
-                    <img style=" margin-top: 10px; margin-left: 90%; width: 25px; height: 25px;" src="img/Icons/editar.svg"/>
                 </div>
                 
     
@@ -34,9 +34,10 @@ $manipula = new manipuladados();
                     <h1 class="card-title"><?php echo  $manipula->getUsuarioByEmail($_COOKIE['email'])[0]['nome'] ?></h1>
                 </div>
                 <div class="col">
-                    
+                
                     <button class="btn btn" style="margin-left:92%;" data-bs-toggle="modal" data-bs-target="#modal<?php echo  $manipula->getUsuarioByEmail($_COOKIE['email'])[0]['id'] ?>"><img src="img/Icons/editar.svg"/></a></button>
 
+                    
                     <div class="modal fade" id="modal<?php echo  $manipula->getUsuarioByEmail($_COOKIE['email'])[0]['id'] ?>" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true"  >
                         <div class="modal-dialog">
                             <div class="modal-content">
@@ -115,9 +116,14 @@ $manipula = new manipuladados();
                 <p class="card-text">Endereço Email: <?php echo  $manipula->getUsuarioByEmail($_COOKIE['email'])[0]['email'] ?></p>
                 <p class="card-text">Sobre Você: <?php echo  $manipula->getUsuarioByEmail($_COOKIE['email'])[0]['descricao'] ?></p>
                 <p class="card-text">Instituição: <?php echo  $manipula->getUsuarioByEmail($_COOKIE['email'])[0]['instituto'] ?></p>
+                <h4 style="position: absolute; margin-left: 80%; margin-top: -190px; ">img</h4>
             </div>
+            
+                    
+            
         </div>
     </div>
+    
     <br/>
 
     
