@@ -100,7 +100,7 @@
                                 <form method="POST" action="adm/postagens/postarInicio.php" enctype="multipart/form-data">
                                     <div class="modal-body">
                                         <div class="mb-3">
-                                            <input type="text" class="form-control" hidden  name="id_usuario" value="<?= $iniciogetUsuarioByEmail($_COOKIE['email'])[0]['id']?>"/ >
+                                            <input type="text" class="form-control" hidden  name="id_usuario" value="<?php echo $manipula->getUsuarioByEmail($_COOKIE['email'])[0]['id'] ?>"/ >
                                             <input type="text" class="form-control" hidden  name="id" value="<?= $inicio[0]['id']?>"/ >
                                             <label class="form-label">Texto Carroseu 1</label>
                                             <input type="text" class="form-control" required="required" name="textCarroseu1" value="<?php echo  $inicio[0]['textCarroseu1']?>"/>
