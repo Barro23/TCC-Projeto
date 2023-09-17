@@ -73,7 +73,7 @@
       <div class="col-lg-4">
         <center>
         <img class="bd-placeholder-img rounded-circle" width="140" height="140" src="<?= $inicio[0]['imgCirculo3']?>"  role="img" aria-label="Placeholder" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="var(--bs-secondary-color)"/></img>
-        <h2 class="fw-normal"><?= $inicio[0]['textCirculo2']?></h2>
+        <h2 class="fw-normal"><?= $inicio[0]['textCirculo3']?></h2>
         
         <p><a class="btn btn-secondary" href="#Jogos">Veja mais&raquo;</a></p>
         </center>
@@ -87,7 +87,7 @@
 
     <div class="row featurette">
       <div class="col-md-7">
-        <h2 class="featurette-heading fw-normal lh-1"><span id="EducacaoAmbiental" class="text-body-secondary">Educação Ambiental</span></h2>
+        <h2 class="featurette-heading fw-normal lh-1"><span id="EducacaoAmbiental" class="text-body-secondary"><?= $inicio[0]['textCirculo1']?></span></h2>
         <p class="lead"><?= $inicio[0]['textCompletoCirculo1']?></p>
       </div>
       <div class="col-md-5">
@@ -99,7 +99,7 @@
 
     <div class="row featurette">
       <div class="col-md-7 order-md-2">
-        <h2 class="featurette-heading fw-normal lh-1"><span id="Cursos" class="text-body-secondary">Cursos</span></h2>
+        <h2 class="featurette-heading fw-normal lh-1"><span id="Cursos" class="text-body-secondary"><?= $inicio[0]['textCirculo2']?></span></h2>
         <p class="lead"><?= $inicio[0]['textCompletoCirculo2']?></p>      
       </div>
       <div class="col-md-5 order-md-1">
@@ -111,7 +111,7 @@
 
     <div class="row featurette">
       <div class="col-md-7">
-        <h2 class="featurette-heading fw-normal lh-1"><span id="Jogos" class="text-body-secondary">Jogos</span></h2>
+        <h2 class="featurette-heading fw-normal lh-1"><span id="Jogos" class="text-body-secondary"><?= $inicio[0]['textCirculo3']?></span></h2>
         <p class="lead"><?= $inicio[0]['textCompletoCirculo3']?></p>     
       </div>
       <div class="col-md-5">

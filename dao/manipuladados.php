@@ -63,19 +63,11 @@
             $this->sql = "UPDATE tb_cursando SET semana = '".$semana."' WHERE $id_curso = id_curso and $id_usuario = id_usuario";
             $this->qr = self::exeSQL($this->sql);
         }
-        /*** 
-        public function update($descricao, $quantidade, $valor, $status, $img, $id){
-            $this->sql = "UPDATE produto SET descricao = '".$descricao."',quantidade = '".$quantidade."',valor = '".$valor."',status = '".$status."',img = '".$img."' WHERE $id = id ";
+        public function updateInicio($id, $id_usuario, $textCarroseu1, $textCarroseu2, $textCarroseu3, $textCirculo1, $textCirculo2, $textCirculo3,$textCompletoCirculo1,$textCompletoCirculo2, $textCompletoCirculo3, $url_local1, $url_local2, $url_local3, $url_local4, $url_local5, $url_local6){
+            $this->sql = "UPDATE tb_inicio SET textCarroseu1 ='".$textCarroseu1."', textCarroseu2 = '".$textCarroseu2."' , textCarroseu3 = '".$textCarroseu3."', textCirculo1 = '".$textCirculo1."', textCirculo2 = '".$textCirculo2."', textCirculo3 = '".$textCirculo3."', textCompletoCirculo1 = '".$textCompletoCirculo1."', textCompletoCirculo2 = '".$textCompletoCirculo2."' ,textCompletoCirculo3 = '".$textCompletoCirculo3."'  ,imgCarroseu1 = '".$url_local1."' ,imgCarroseu2 = '".$url_local2."' ,imgCarroseu3 = '".$url_local3."' ,imgCirculo1 = '".$url_local4."' ,imgCirculo2 = '".$url_local5."',imgCirculo3 = '".$url_local6."' WHERE $id = id AND $id_usuario = id_usuario  ";
             $this->qr = self::exeSQL($this->sql);
         }
-
-
-        public function getAllDataTable(){
-            $this->sql = "SELECT * FROM $this->table";
-            $this->qr = self::exeSQL($this->sql);
-            return $this->qr;
-        }
-        ***/
+        
 
         public function getAllDataTable(){
             $this->sql = "SELECT * FROM $this->table;";
