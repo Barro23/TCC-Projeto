@@ -3,7 +3,7 @@
     include_once('dao/manipuladados.php');
     $manipula = new manipuladados();
 
-
+    
     if(@$_SESSION['alert'] != null){
 
         echo '<div class="alert alert-warning alert-dismissible fade show container" role="alert">
@@ -11,8 +11,9 @@
         <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
       </div>
       ';   
-      $_SESSION['alert'] == null;  
+      
     }
+    $_SESSION['alert'] == null;  
 
     foreach($manipula->getSemana($_GET['IdSemana']) as $semana ){
         
@@ -112,7 +113,7 @@
                     <input type="text" class="form-control" hidden  name="semana" value="<?= $semana['semana'] + 1 ?>">
                     <input type="text" class="form-control" hidden  name="id_curso" value="<?= $semana['id_curso'] ?>" >
                     <input type="text" class="form-control" hidden  name="id_usuario" value="<?= $manipula->getUsuarioByEmail($_COOKIE['email'])[0]['id']?>" >
-                    <button type="submit"  class="btn btn" name="acao" value="atualizarSemana" style="margin-left:95%; margin-top: -70px;" ><img src="img/Icons/save-fill.svg"/></button>
+                    <button type="submit"  class="btn btn" name="acao" value="atualizarSemana" style="margin-left:90%; margin-top: -70px;" ><img src="img/Icons/enviar.svg"/></button>
                 </form>
 
                 </div>   

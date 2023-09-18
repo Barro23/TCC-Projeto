@@ -9,7 +9,7 @@
   <center>
   <div class="carousel-inner">
     <div class="carousel-item active" data-bs-interval="1000">
-      <img src="<?= $inicio[0]['imgCarroseu1']?>" class="" style=" object-fit: conver; width: 100%;  -webkit-mask-image: linear-gradient(to top, transparent 5%, white 35%);">
+      <img src="<?= $inicio[0]['imgCarroseu1']?>" class="" style=" object-fit: conver; width: 100%;  -webkit-mask-image: linear-gradient(to top, transparent 5%, white 25%);">
       <div class="carousel-caption text-start">
             <h1><?= $inicio[0]['textCarroseu1']?></h1>
             
@@ -17,7 +17,7 @@
           </div>
     </div>
     <div class="carousel-item" data-bs-interval="2000">
-      <img src="<?= $inicio[0]['imgCarroseu2']?>" class=""  style=" object-fit: conver; width: 100%; -webkit-mask-image: linear-gradient(to top, transparent 5%, white 35%);">
+      <img src="<?= $inicio[0]['imgCarroseu2']?>" class=""  style=" object-fit: conver; width: 100%; -webkit-mask-image: linear-gradient(to top, transparent 5%, white 25%);">
       <div class="container">
           <div class="carousel-caption">
             <h1><?= $inicio[0]['textCarroseu2']?></h1>
@@ -27,7 +27,7 @@
         </div>
     </div>
     <div class="carousel-item">
-      <img src="<?= $inicio[0]['imgCarroseu3']?>" class=""  style=" object-fit: conver; width: 100%; -webkit-mask-image: linear-gradient(to top, transparent 5%, white 35%);">
+      <img src="<?= $inicio[0]['imgCarroseu3']?>" class=""  style=" object-fit: conver; width: 100%; -webkit-mask-image: linear-gradient(to top, transparent 5%, white 25%);">
       <div class="container">
           <div class="carousel-caption text-end">
             <h1 ><?= $inicio[0]['textCarroseu3']?></h1>
