@@ -40,11 +40,11 @@
                         <?php
                             }else if($i >= 3 AND $i < 6){        
                         ?>
-                        <img style="position: absolute; margin-left: 80%; margin-top: -190px; height: 13%;" title="Experiente" src="img/icons/rank2.png">img</img>
+                        <img style="position: absolute; margin-left: 80%; margin-top: -190px; height: 13%;" title="Experiente" src="img/icons/rank2.png"></img>
                         <?php
                             }else if($i >= 6){        
                         ?>
-                        <img style="position: absolute; margin-left: 80%; margin-top: -190px; height: 13%; " title="Mestre" src="img/icons/rank3.png">img</img>
+                        <img style="position: absolute; margin-left: 80%; margin-top: -190px; height: 13%; " title="Mestre" src="img/icons/rank3.png"></img>
                     <?php
                         }    
                     

@@ -52,19 +52,19 @@ $manipula = new manipuladados();
                                         <div class="mb-3">
                                             <input type="text" class="form-control" hidden  name="id" value="<?php echo  $manipula->getUsuarioByEmail($_COOKIE['email'])[0]['id'] ?>" >
                                             <label class="form-label">Nome</label>
-                                            <input type="text" class="form-control" name="nome" value="<?php echo  $manipula->getUsuarioByEmail($_COOKIE['email'])[0]['nome'] ?>">
+                                            <input type="text" class="form-control" required name="nome" value="<?php echo  $manipula->getUsuarioByEmail($_COOKIE['email'])[0]['nome'] ?>">
                                         </div>
                                         <div class="mb-3">
                                             <label class="form-label">Nome Completo</label>
-                                            <input type="text" class="form-control" name="nome_completo" value="<?php echo  $manipula->getUsuarioByEmail($_COOKIE['email'])[0]['nome_completo'] ?>">
+                                            <input type="text" class="form-control" required name="nome_completo" value="<?php echo  $manipula->getUsuarioByEmail($_COOKIE['email'])[0]['nome_completo'] ?>">
                                         </div>
                                         <div class="mb-3">
                                             <label class="form-label">Instituição</label>
-                                            <input type="text" class="form-control" name="instituto" value="<?php echo  $manipula->getUsuarioByEmail($_COOKIE['email'])[0]['instituto'] ?>">
+                                            <input type="text" class="form-control" required name="instituto" value="<?php echo  $manipula->getUsuarioByEmail($_COOKIE['email'])[0]['instituto'] ?>">
                                         </div>
                                         <div class="mb-3">
                                             <label class="form-label">Descreva-se</label>
-                                            <input type="text" class="form-control" name="descricao" value="<?php echo  $manipula->getUsuarioByEmail($_COOKIE['email'])[0]['descricao'] ?>">
+                                            <input type="text" class="form-control" required name="descricao" value="<?php echo  $manipula->getUsuarioByEmail($_COOKIE['email'])[0]['descricao'] ?>">
                                         </div>
                                         <div class="mb-3">
                                             <label class="form-label">Escolha uma imagem para sua Capa</label>
@@ -77,7 +77,7 @@ $manipula = new manipuladados();
                                 
                                         <div class="mb-3">
                                             <label class="form-label">Data de Nascimento</label>
-                                            <input type="date" class="form-control" name="data_nascimento" value="<?php echo  $manipula->getUsuarioByEmail($_COOKIE['email'])[0]['data_nascimento'] ?>">
+                                            <input type="date" class="form-control" required name="data_nascimento" value="<?php echo  $manipula->getUsuarioByEmail($_COOKIE['email'])[0]['data_nascimento'] ?>">
                                         </div>
                                         <div class="mb-3">
                                 
@@ -132,11 +132,11 @@ $manipula = new manipuladados();
                         <?php
                             }else if($i >= 3 and $i < 6){        
                         ?>
-                        <img style="position: absolute; margin-left: 80%; margin-top: -190px; height: 13%;" title="Experiente" src="img/icons/rank2.png">img</img>
+                        <img style="position: absolute; margin-left: 80%; margin-top: -190px; height: 13%;" title="Experiente" src="img/icons/rank2.png"></img>
                         <?php
                             }else if($i >= 6){        
                         ?>
-                        <img style="position: absolute; margin-left: 80%; margin-top: -190px; height: 13%; " title="Mestre" src="img/icons/rank3.png">img</img>
+                        <img style="position: absolute; margin-left: 80%; margin-top: -190px; height: 13%; " title="Mestre" src="img/icons/rank3.png"></img>
                     <?php
                         }    
                       
@@ -200,15 +200,15 @@ $manipula = new manipuladados();
                                         <div class="mb-3">
                                             <input type="text" class="form-control" hidden  name="id_usuario" value="<?php echo  $manipula->getUsuarioByEmail($_COOKIE['email'])[0]['id'] ?>" >
                                             <label class="form-label">Titulo do conteúdo</label>
-                                            <input type="text" class="form-control" name="titulo">
+                                            <input type="text" required class="form-control" name="titulo">
                                         </div>
                                         <div class="mb-3">
                                             <label class="form-label">Resumo</label>
-                                            <input type="text" class="form-control" name="resumo" ">
+                                            <input type="text" required class="form-control" name="resumo" ">
                                         </div>
                                         <div class="mb-3">
                                             <label class="form-label">Texto</label>
-                                            <input type="text" class="form-control" name="texto">
+                                            <input type="text" required class="form-control" name="texto">
                                         </div>
                                         
                                     </div>
@@ -266,15 +266,15 @@ $manipula = new manipuladados();
                                                         <input type="text" class="form-control" hidden  name="id" value="<?= $textos['id']?>" >
                                                         <input type="text" class="form-control" hidden  name="id_usuario" value="<?php echo  $manipula->getUsuarioByEmail($_COOKIE['email'])[0]['id'] ?>" >
                                                         <label class="form-label">Titulo do conteúdo</label>
-                                                        <input type="text" class="form-control" name="titulo" value="<?= $textos['titulo']?>">
+                                                        <input type="text" class="form-control" required name="titulo" value="<?= $textos['titulo']?>">
                                                     </div>
                                                     <div class="mb-3">
                                                         <label class="form-label">Resumo</label>
-                                                        <input type="text" class="form-control" name="resumo" value="<?= $textos['resumo']?>">
+                                                        <input type="text" class="form-control" required name="resumo" value="<?= $textos['resumo']?>">
                                                     </div>
                                                     <div class="mb-3">
                                                         <label class="form-label">Texto</label>
-                                                        <input type="text" class="form-control" name="texto" value="<?= $textos['texto']?>">
+                                                        <input type="text" class="form-control" required name="texto" value="<?= $textos['texto']?>">
                                                     </div>
                                                     
                                                 </div>
@@ -326,15 +326,15 @@ $manipula = new manipuladados();
                                         <div class="mb-3">
                                             <input type="text" class="form-control" hidden  name="id_usuario" value="<?php echo  $manipula->getUsuarioByEmail($_COOKIE['email'])[0]['id'] ?>" >
                                             <label class="form-label">Titulo do conteúdo</label>
-                                            <input type="text" class="form-control" name="titulo">
+                                            <input type="text" required class="form-control" name="titulo">
                                         </div>
                                         <div class="mb-3">
                                             <label class="form-label">Resumo</label>
-                                            <input type="text" class="form-control" name="resumo" ">
+                                            <input type="text" required class="form-control" name="resumo" ">
                                         </div>
                                         <div class="mb-3">
                                             <label class="form-label">Texto</label>
-                                            <input type="file" name="pdf" class="form-control">
+                                            <input type="file" required name="pdf" class="form-control">
                                         </div>
                                         
                                     </div>
@@ -377,9 +377,9 @@ $manipula = new manipuladados();
                                 
                             </div>
                             <div class="col-2">
-                                <button class="btn btn" style="margin-left:80%;" data-bs-toggle="modal" data-bs-target="#modal<?php echo  $pdfs['id']?>"><img src="img/Icons/editar.svg"/></button>
+                                <button class="btn btn" style="margin-left:80%;" data-bs-toggle="modal" data-bs-target="#modal000<?php echo  $pdfs['id']?>"><img src="img/Icons/editar.svg"/></button>
                         
-                                <div class="modal fade" id="modal<?php echo $pdfs['id']?>" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true"  >
+                                <div class="modal fade" id="modal000<?php echo $pdfs['id']?>" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true"  >
                                     <div class="modal-dialog">
                                         <div class="modal-content">
 
@@ -394,15 +394,15 @@ $manipula = new manipuladados();
                                                         <input type="text" class="form-control" hidden  name="id" value="<?= $pdfs['id']?>" >
                                                         <input type="text" class="form-control" hidden  name="id_usuario" value="<?php echo  $manipula->getUsuarioByEmail($_COOKIE['email'])[0]['id'] ?>" >
                                                         <label class="form-label">Titulo do conteúdo</label>
-                                                        <input type="text" class="form-control" name="titulo" value="<?= $pdfs['titulo']?>">
+                                                        <input type="text" class="form-control" required name="titulo" value="<?= $pdfs['titulo']?>">
                                                     </div>
                                                     <div class="mb-3">
                                                         <label class="form-label">Resumo</label>
-                                                        <input type="text" class="form-control" name="resumo" value="<?= $pdfs['resumo']?>">
+                                                        <input type="text" class="form-control" required name="resumo" value="<?= $pdfs['resumo']?>">
                                                     </div>
                                                     <div class="mb-3">
                                                         <label class="form-label">Arquivo PDF</label>
-                                                        <input type="file" name="pdf" class="form-control" value="<?php echo $pdfs['pdf'] ?>">
+                                                        <input type="file" name="pdf" required class="form-control" value="<?php echo $pdfs['pdf'] ?>">
                                                     </div>
                                                     
                                                 </div>
@@ -495,15 +495,15 @@ $manipula = new manipuladados();
                                                         <input type="text" class="form-control" hidden  name="id" value="<?= $cursos['id']?>" >
                                                         <input type="text" class="form-control" hidden  name="id_usuario" value="<?php echo  $manipula->getUsuarioByEmail($_COOKIE['email'])[0]['id'] ?>" >
                                                         <label class="form-label">Titulo do conteúdo</label>
-                                                        <input type="text" class="form-control" name="titulo" value="<?= $cursos['titulo']?>">
+                                                        <input type="text" class="form-control" required name="titulo" value="<?= $cursos['titulo']?>">
                                                     </div>
                                                     <div class="mb-3">
                                                         <label class="form-label">Resumo</label>
-                                                        <input type="text" class="form-control" name="resumo" value="<?= $cursos['resumo']?>">
+                                                        <input type="text" class="form-control" required name="resumo" value="<?= $cursos['resumo']?>">
                                                     </div>
                                                     <div class="mb-3">
                                                         <label class="form-label">Carga Horária</label>
-                                                        <input type="text" class="form-control" name="resumo" value="<?= $cursos['horas']?>">
+                                                        <input type="text" class="form-control" required name="resumo" value="<?= $cursos['horas']?>">
                                                     </div>
 
                                                 </div>
@@ -523,11 +523,11 @@ $manipula = new manipuladados();
                                                         <label class="form-label"><h5>Modulo <?= $semanas['semana']?></h5></label>
                                                         <br/>
                                                         <label class="form-label">Nome:</label>
-                                                        <input type="text" class="form-control" name="nomeMateria" value="<?= $semanas['nomeMateria']?>">
+                                                        <input type="text" class="form-control" required name="nomeMateria" value="<?= $semanas['nomeMateria']?>">
                                                     </div>
                                                     <div class="mb-3 container">        
                                                         <label class="form-label">Conteúdo:</label>
-                                                        <input type="text" class="form-control" name="nomeMateria" value="<?= $semanas['conteudo']?>">
+                                                        <input type="text" class="form-control" required name="nomeMateria" value="<?= $semanas['conteudo']?>">
                                                     </div>
                                                           
                                                     
@@ -545,67 +545,67 @@ $manipula = new manipuladados();
 
                                                     <div class="mb-3 container">        
                                                         <label class="form-label">Pergunta 1</label>
-                                                        <input type="text" class="form-control" name="nomeMateria" value="<?= $questionarios[0]['perg1']?>">
+                                                        <input type="text" class="form-control" required name="nomeMateria" value="<?= $questionarios[0]['perg1']?>">
                                                    
                                                         <label class="form-label">Letra A</label>
-                                                        <input type="text" class="form-control" name="nomeMateria" value="<?= $questionarios[0]['a1']?>">
+                                                        <input type="text" class="form-control" required name="nomeMateria" value="<?= $questionarios[0]['a1']?>">
                                                         <label class="form-label">Letra B</label>
-                                                        <input type="text" class="form-control" name="nomeMateria" value="<?= $questionarios[0]['b1']?>">
+                                                        <input type="text" class="form-control" required name="nomeMateria" value="<?= $questionarios[0]['b1']?>">
                                                         <label class="form-label">Letra C</label>
-                                                        <input type="text" class="form-control" name="nomeMateria" value="<?= $questionarios[0]['c1']?>">
+                                                        <input type="text" class="form-control" required name="nomeMateria" value="<?= $questionarios[0]['c1']?>">
                                                         <label class="form-label">Letra D</label>
-                                                        <input type="text" class="form-control" name="nomeMateria" value="<?= $questionarios[0]['d1']?>">
+                                                        <input type="text" class="form-control" required name="nomeMateria" value="<?= $questionarios[0]['d1']?>">
 
                                                         <label class="form-label">Resposta Correta</label>
-                                                        <input type="text" class="form-control" name="nomeMateria" value="<?= $questionarios[0]['resp1']?>">
+                                                        <input type="text" class="form-control" required name="nomeMateria" value="<?= $questionarios[0]['resp1']?>">
                                                     </div>
                                                     <div class="mb-3 container">        
                                                         <label class="form-label">Pergunta 2</label>
-                                                        <input type="text" class="form-control" name="nomeMateria" value="<?= $questionarios[0]['perg2']?>">
+                                                        <input type="text" class="form-control" required name="nomeMateria" value="<?= $questionarios[0]['perg2']?>">
 
                                                         <label class="form-label">Letra A</label>
-                                                        <input type="text" class="form-control" name="nomeMateria" value="<?= $questionarios[0]['a2']?>">
+                                                        <input type="text" class="form-control" required name="nomeMateria" value="<?= $questionarios[0]['a2']?>">
                                                         <label class="form-label">Letra B</label>
-                                                        <input type="text" class="form-control" name="nomeMateria" value="<?= $questionarios[0]['b2']?>">
+                                                        <input type="text" class="form-control" required name="nomeMateria" value="<?= $questionarios[0]['b2']?>">
                                                         <label class="form-label">Letra C</label>
-                                                        <input type="text" class="form-control" name="nomeMateria" value="<?= $questionarios[0]['c2']?>">
+                                                        <input type="text" class="form-control" required name="nomeMateria" value="<?= $questionarios[0]['c2']?>">
                                                         <label class="form-label">Letra D</label>
-                                                        <input type="text" class="form-control" name="nomeMateria" value="<?= $questionarios[0]['d2']?>">
+                                                        <input type="text" class="form-control" required name="nomeMateria" value="<?= $questionarios[0]['d2']?>">
 
                                                         <label class="form-label">Resposta Correta</label>
-                                                        <input type="text" class="form-control" name="nomeMateria" value="<?= $questionarios[0]['resp2']?>">
+                                                        <input type="text" class="form-control" required name="nomeMateria" value="<?= $questionarios[0]['resp2']?>">
                                                     </div>
                                                     <div class="mb-3 container">        
                                                         <label class="form-label">Pergunta 3</label>
-                                                        <input type="text" class="form-control" name="nomeMateria" value="<?= $questionarios[0]['perg3']?>">
+                                                        <input type="text" class="form-control" required name="nomeMateria" value="<?= $questionarios[0]['perg3']?>">
 
                                                         <label class="form-label">Letra A</label>
-                                                        <input type="text" class="form-control" name="nomeMateria" value="<?= $questionarios[0]['a3']?>">
+                                                        <input type="text" class="form-control" required name="nomeMateria" value="<?= $questionarios[0]['a3']?>">
                                                         <label class="form-label">Letra B</label>
-                                                        <input type="text" class="form-control" name="nomeMateria" value="<?= $questionarios[0]['b3']?>">
+                                                        <input type="text" class="form-control" required name="nomeMateria" value="<?= $questionarios[0]['b3']?>">
                                                         <label class="form-label">Letra C</label>
-                                                        <input type="text" class="form-control" name="nomeMateria" value="<?= $questionarios[0]['c3']?>">
+                                                        <input type="text" class="form-control" required name="nomeMateria" value="<?= $questionarios[0]['c3']?>">
                                                         <label class="form-label">Letra D</label>
-                                                        <input type="text" class="form-control" name="nomeMateria" value="<?= $questionarios[0]['d3']?>">
+                                                        <input type="text" class="form-control"  required name="nomeMateria" value="<?= $questionarios[0]['d3']?>">
 
                                                         <label class="form-label">Resposta Correta</label>
-                                                        <input type="text" class="form-control" name="nomeMateria" value="<?= $questionarios[0]['resp3']?>">
+                                                        <input type="text" class="form-control"  required name="nomeMateria" value="<?= $questionarios[0]['resp3']?>">
                                                     </div>
                                                     <div class="mb-3 container">        
                                                         <label class="form-label">Pergunta 4</label>
-                                                        <input type="text" class="form-control" name="nomeMateria" value="<?= $questionarios[0]['perg4']?>">
+                                                        <input type="text" class="form-control" required name="nomeMateria" value="<?= $questionarios[0]['perg4']?>">
 
                                                         <label class="form-label">Letra A</label>
-                                                        <input type="text" class="form-control" name="nomeMateria" value="<?= $questionarios[0]['a4']?>">
+                                                        <input type="text" class="form-control"  requiredname="nomeMateria" value="<?= $questionarios[0]['a4']?>">
                                                         <label class="form-label">Letra B</label>
-                                                        <input type="text" class="form-control" name="nomeMateria" value="<?= $questionarios[0]['b4']?>">
+                                                        <input type="text" class="form-control" required name="nomeMateria" value="<?= $questionarios[0]['b4']?>">
                                                         <label class="form-label">Letra C</label>
-                                                        <input type="text" class="form-control" name="nomeMateria" value="<?= $questionarios[0]['c4']?>">
+                                                        <input type="text" class="form-control" required name="nomeMateria" value="<?= $questionarios[0]['c4']?>">
                                                         <label class="form-label">Letra D</label>
-                                                        <input type="text" class="form-control" name="nomeMateria" value="<?= $questionarios[0]['d4']?>">
+                                                        <input type="text" class="form-control" required name="nomeMateria" value="<?= $questionarios[0]['d4']?>">
 
                                                         <label class="form-label">Resposta Correta</label>
-                                                        <input type="text" class="form-control" name="nomeMateria" value="<?= $questionarios[0]['resp4']?>">
+                                                        <input type="text" class="form-control" required name="nomeMateria" value="<?= $questionarios[0]['resp4']?>">
                                                     </div>
 
                                                 <?php

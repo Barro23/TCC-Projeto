@@ -11,7 +11,7 @@
     
       <div class="container-fluid"> 
         <div class="RodapeBotoes">
-        <a class="nav-link" href="#">locate</a>
+        <a class="nav-link" href="#">Copyright ©2023</a>
         </div>
       </div>
   
