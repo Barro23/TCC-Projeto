@@ -6,24 +6,21 @@
   </div>
   <div class="carousel-inner">
     <div class="carousel-item active">
-      <img src="img/exemploBaner2.png" class="d-block w-100" alt="...">
+      <img src="img/icons/bannerjogos.png" class="d-block w-100" alt="...">
       <div class="carousel-caption d-none d-md-block">
-        <h5>First slide label</h5>
-        <p>Some representative placeholder content for the first slide.</p>
+
       </div>
     </div>
     <div class="carousel-item">
-      <img src="img/exemploBaner2.png" class="d-block w-100" alt="...">
+      <img src="img/icons/bannerjogos.png" class="d-block w-100" alt="...">
       <div class="carousel-caption d-none d-md-block">
-        <h5>Second slide label</h5>
-        <p>Some representative placeholder content for the second slide.</p>
+   
       </div>
     </div>
     <div class="carousel-item">
-      <img src="img/exemploBaner2.png" class="d-block w-100" alt="...">
+      <img src="img/icons/bannerjogos.png" class="d-block w-100" alt="...">
       <div class="carousel-caption d-none d-md-block">
-        <h5>Third slide label</h5>
-        <p>Some representative placeholder content for the third slide.</p>
+     
       </div>
     </div>
   </div>
@@ -38,135 +35,128 @@
 </div>
 
 <div  class="container" >
-    <h1>aqui sao os jogos</h1>
+    <h1>Jogos</h1>
         <div class="row row-cols-2 row-cols-md-3 row-cols-lg-4 g-3">
 
         
             <div class="col">
                 <div class="card h-20" >
-                    <img src=""  style="object-fit: contain; width: 100%; height:250px;">
+                    <img src="img/icons/jogo2.png"  style="object-fit: cover; width: 100%; height:250px;">
 
                     <div class="card-img-overlay">
-                        <p class="card-text text-truncate">Descrição:</p>
-                        <p class="card-text text-truncate">avaliação</p>
+                        <br><br><br><br><br><br><br>
+                        <p class="card-text text-truncate" ><a href="https://www.mediafire.com/file/3tqy8hwena42cvs/My_project_TCC_Data.zip/file"><button type="button" class="btn btn-success">Baixe agora!</button></a></p>
                         
                     </div>
                 </div>
             </div>
-            <div class="col">
+                <div class="col">
                 <div class="card h-20" >
-                    <img src=""  style="object-fit: contain; width: 100%; height:250px;">
+                    <img src="img/icons/jogo1.png"  style="object-fit: cover; width: 100%; height:250px;">
 
                     <div class="card-img-overlay">
-                        <p class="card-text text-truncate">Descrição:</p>
-                        <p class="card-text text-truncate">avaliação</p>
-                        
+                        <br><br><br><br><br><br><br>
+                        <p class="card-text text-truncate" ><h5 style="color: red;">Desenvolvimento...</h5></p>
                     </div>
                 </div>
             </div>
             <div class="col">
                 <div class="card h-20" >
-                    <img src=""  style="object-fit: contain; width: 100%; height:250px;">
+                    <img src="img/icons/jogo1.png"  style="object-fit: cover; width: 100%; height:250px;">
 
                     <div class="card-img-overlay">
-                        <p class="card-text text-truncate">Descrição:</p>
-                        <p class="card-text text-truncate">avaliação</p>
-                        
+                        <br><br><br><br><br><br><br>
+                        <p class="card-text text-truncate" ><h5 style="color: red;">Desenvolvimento...</h5></p>
                     </div>
                 </div>
             </div>
             <div class="col">
                 <div class="card h-20" >
-                    <img src=""  style="object-fit: contain; width: 100%; height:250px;">
+                    <img src="img/icons/jogo1.png"  style="object-fit: cover; width: 100%; height:250px;">
 
                     <div class="card-img-overlay">
-                        <p class="card-text text-truncate">Descrição:</p>
-                        <p class="card-text text-truncate">avaliação</p>
-                        
+                        <br><br><br><br><br><br><br>
+                        <p class="card-text text-truncate" ><h5 style="color: red;">Desenvolvimento...</h5></p>
                     </div>
                 </div>
             </div>
             <div class="col">
                 <div class="card h-20" >
-                    <img src=""  style="object-fit: contain; width: 100%; height:250px;">
+                    <img src="img/icons/jogo1.png"  style="object-fit: cover; width: 100%; height:250px;">
 
                     <div class="card-img-overlay">
-                        <p class="card-text text-truncate">Descrição:</p>
-                        <p class="card-text text-truncate">avaliação</p>
-                        
+                        <br><br><br><br><br><br><br>
+                        <p class="card-text text-truncate" ><h5 style="color: red;">Desenvolvimento...</h5></p>
                     </div>
                 </div>
             </div>
             <div class="col">
                 <div class="card h-20" >
-                    <img src=""  style="object-fit: contain; width: 100%; height:250px;">
-                    <div class="card-img-overlay">
-                        <p class="card-text text-truncate">Descrição:</p>
-                        <p class="card-text text-truncate">avaliação</p>
-                        
-                    </div>
-                </div>
-            </div>
-            <div class="col">
-                <div class="card h-20" >
-                    <img src=""  style="object-fit: contain; width: 100%; height:250px;">
+                    <img src="img/icons/jogo1.png"  style="object-fit: cover; width: 100%; height:250px;">
 
                     <div class="card-img-overlay">
-                        <p class="card-text text-truncate">Descrição:</p>
-                        <p class="card-text text-truncate">avaliação</p>
-                        
+                        <br><br><br><br><br><br><br>
+                        <p class="card-text text-truncate" ><h5 style="color: red;">Desenvolvimento...</h5></p>
                     </div>
                 </div>
             </div>
             <div class="col">
                 <div class="card h-20" >
-                    <img src=""  style="object-fit: contain; width: 100%; height:250px;">
-                    <div class="card-img-overlay">
-                        <p class="card-text text-truncate">Descrição:</p>
-                        <p class="card-text text-truncate">avaliação</p>
-                        
-                    </div>
-                </div>
-            </div>
-            <div class="col">
-                <div class="card h-20" >
-                    <img src=""  style="object-fit: contain; width: 100%; height:250px;">
+                    <img src="img/icons/jogo1.png"  style="object-fit: cover; width: 100%; height:250px;">
 
                     <div class="card-img-overlay">
-                        <p class="card-text text-truncate">Descrição:</p>
-                        <p class="card-text text-truncate">avaliação</p>
-                        
+                        <br><br><br><br><br><br><br>
+                        <p class="card-text text-truncate" ><h5 style="color: red;">Desenvolvimento...</h5></p>
                     </div>
                 </div>
             </div>
             <div class="col">
                 <div class="card h-20" >
-                    <img src=""  style="object-fit: contain; width: 100%; height:250px;">
-                    <div class="card-img-overlay">
-                        <p class="card-text text-truncate">Descrição:</p>
-                        <p class="card-text text-truncate">avaliação</p>
-                        
-                    </div>
-                </div>
-            </div>
-            <div class="col">
-                <div class="card h-20" >
-                    <img src=""  style="object-fit: contain; width: 100%; height:250px;">
+                    <img src="img/icons/jogo1.png"  style="object-fit: cover; width: 100%; height:250px;">
 
                     <div class="card-img-overlay">
-                        <p class="card-text text-truncate">Descrição:</p>
-                        <p class="card-text text-truncate">avaliação</p>
-                        
+                        <br><br><br><br><br><br><br>
+                        <p class="card-text text-truncate" ><h5 style="color: red;">Desenvolvimento...</h5></p>
                     </div>
                 </div>
             </div>
             <div class="col">
                 <div class="card h-20" >
-                    <img src=""  style="object-fit: contain; width: 100%; height:250px;">
+                    <img src="img/icons/jogo1.png"  style="object-fit: cover; width: 100%; height:250px;">
+
                     <div class="card-img-overlay">
-                        <p class="card-text text-truncate">Descrição:</p>
-                        <p class="card-text text-truncate">avaliação</p>
-                        
+                        <br><br><br><br><br><br><br>
+                        <p class="card-text text-truncate" ><h5 style="color: red;">Desenvolvimento...</h5></p>
+                    </div>
+                </div>
+            </div>
+                <div class="col">
+                <div class="card h-20" >
+                    <img src="img/icons/jogo1.png"  style="object-fit: cover; width: 100%; height:250px;">
+
+                    <div class="card-img-overlay">
+                        <br><br><br><br><br><br><br>
+                        <p class="card-text text-truncate" ><h5 style="color: red;">Desenvolvimento...</h5></p>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card h-20" >
+                    <img src="img/icons/jogo1.png"  style="object-fit: cover; width: 100%; height:250px;">
+
+                    <div class="card-img-overlay">
+                        <br><br><br><br><br><br><br>
+                        <p class="card-text text-truncate" ><h5 style="color: red;">Desenvolvimento...</h5></p>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card h-20" >
+                    <img src="img/icons/jogo1.png"  style="object-fit: cover; width: 100%; height:250px;">
+
+                    <div class="card-img-overlay">
+                        <br><br><br><br><br><br><br>
+                        <p class="card-text text-truncate" ><h5 style="color: red;">Desenvolvimento...</h5></p>
                     </div>
                 </div>
             </div>

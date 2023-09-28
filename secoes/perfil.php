@@ -467,7 +467,6 @@ $manipula = new manipuladados();
             <div class="card container mb-4" id="curso" style="width: 100%;">
                 <div class="card-body">
 
-                   
                        
                         <div class="row">
                             <div class="col-10">
@@ -635,6 +634,7 @@ $manipula = new manipuladados();
                         
                     </div>
             </div>
+            
                 
                
                
@@ -714,15 +714,15 @@ $manipula = new manipuladados();
                                         </div>
                                    
                                         </div>
-                                        </div>
+                                        
                                     </div>
                                
                                         
                                         
                                 
                             </div>
+                            </div>
                             
-                        </div>
                             
                             
                            
@@ -872,6 +872,8 @@ $manipula = new manipuladados();
                                 </div>
                             </div>
                             </div>
+
+                            
                             
                             
                         <?php
@@ -896,7 +898,9 @@ $manipula = new manipuladados();
                         </div>
                     
                     
-                    
+                        <div>
+                            
+                        </div>
                 </div>
                 
                
@@ -913,10 +917,8 @@ $manipula = new manipuladados();
         ?>  
       </div> 
   
-      
-</div>
-</div>
-      
+    </div>
+
 </div>
      
         
@@ -927,8 +929,4 @@ $manipula = new manipuladados();
 </div>  
        
            
-</div>
-</div>
-</div>
-</div>
 

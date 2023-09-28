@@ -15,7 +15,7 @@
 
 
         <div class="col" >
-                <div class="card h-20 " style=" width: 100%; height:250px;" >
+                <div class="card h-20 " style=" width: 100%; height:300px;" >
                     <div class="container">
                         <br/>
                     <form method="POST" action="adm/cadastrarCurso/cadastrarNoCurso.php" enctype="multipart/form-data">
@@ -79,7 +79,7 @@
                         
                     ?>
                        
-                            <h3>cadastrado</h3>
+                            <h5 style="color: green;">cadastrado</h5>
 
                     <?php
                         

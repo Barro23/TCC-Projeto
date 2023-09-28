@@ -1,4 +1,5 @@
 <?php
+    error_reporting(0);
 
     include_once('dao/manipuladados.php');
     $manipula = new manipuladados();
@@ -23,8 +24,8 @@
         <div class="card-body">
         
                 
-                <h3><?= $semana['nomeMateria'] ?></h3>
-                <h1><?= $semana['conteudo'] ?></h1>
+                <h1><?= $semana['nomeMateria'] ?></h1>
+                <h3><?= $semana['conteudo'] ?></h3>
 
         
             </div>   
@@ -48,64 +49,64 @@
                     <h3><?= $questionarios['perg1'] ?></h3>
                         <p>
                         <label>
-                        <input type="radio" name="questao1" value="a" /> A) <?= $questionarios['a1'] ?>;</label>
+                        <input type="radio" name="questao1" value="a" /> A) <?= $questionarios['a1'] ?></label>
                         <br />
                         <label>
-                        <input type="radio" name="questao1" value="b" /> B) <?= $questionarios['b1'] ?>;</label>
+                        <input type="radio" name="questao1" value="b" /> B) <?= $questionarios['b1'] ?></label>
                         <br />
                         <label>
-                        <input type="radio" name="questao1" value="c" /> C) <?= $questionarios['c1'] ?>;</label>
+                        <input type="radio" name="questao1" value="c" /> C) <?= $questionarios['c1'] ?></label>
                         <br />
                         <label>
-                        <input type="radio" name="questao1" value="d" /> D) <?= $questionarios['d1'] ?>.</label>
+                        <input type="radio" name="questao1" value="d" /> D) <?= $questionarios['d1'] ?></label>
 
                         <input type="text" class="form-control" hidden  name="resp1" value="<?= $questionarios['resp1'] ?>">
                     <br />
                     <h3><?= $questionarios['perg2'] ?></h3>
                         <p>
                         <label>
-                        <input type="radio" name="questao2" value="a" /> A) <?= $questionarios['a2'] ?>;</label>
+                        <input type="radio" name="questao2" value="a" /> A) <?= $questionarios['a2'] ?></label>
                         <br />
                         <label>
-                        <input type="radio" name="questao2" value="b" /> B) <?= $questionarios['b2'] ?>;</label>
+                        <input type="radio" name="questao2" value="b" /> B) <?= $questionarios['b2'] ?></label>
                         <br />
                         <label>
-                        <input type="radio" name="questao2" value="c" /> C) <?= $questionarios['c2'] ?>;</label>
+                        <input type="radio" name="questao2" value="c" /> C) <?= $questionarios['c2'] ?></label>
                         <br />
                         <label>
-                        <input type="radio" name="questao2" value="d" /> D) <?= $questionarios['d2'] ?>.</label>
+                        <input type="radio" name="questao2" value="d" /> D) <?= $questionarios['d2'] ?></label>
 
                         <input type="text" class="form-control" hidden  name="resp2" value="<?= $questionarios['resp2'] ?>">
                     <br />
                     <h3><?= $questionarios['perg3'] ?></h3>
                         <p>
                         <label>
-                        <input type="radio" name="questao3" value="a" /> A) <?= $questionarios['a3'] ?>;</label>
+                        <input type="radio" name="questao3" value="a" /> A) <?= $questionarios['a3'] ?></label>
                         <br />
                         <label>
-                        <input type="radio" name="questao3" value="b" /> B) <?= $questionarios['b3'] ?>;</label>
+                        <input type="radio" name="questao3" value="b" /> B) <?= $questionarios['b3'] ?></label>
                         <br />
                         <label>
-                        <input type="radio" name="questao3" value="c" /> C) <?= $questionarios['c3'] ?>;</label>
+                        <input type="radio" name="questao3" value="c" /> C) <?= $questionarios['c3'] ?></label>
                         <br />
                         <label>
-                        <input type="radio" name="questao3" value="d" /> D) <?= $questionarios['d3'] ?>.</label>
+                        <input type="radio" name="questao3" value="d" /> D) <?= $questionarios['d3'] ?></label>
 
                         <input type="text" class="form-control" hidden  name="resp3" value="<?= $questionarios['resp3'] ?>">
                     <br />
                     <h3><?= $questionarios['perg4'] ?></h3>
                         <p>
                         <label>
-                        <input type="radio" name="questao4" value="a" /> A) <?= $questionarios['a4'] ?>;</label>
+                        <input type="radio" name="questao4" value="a" /> A) <?= $questionarios['a4'] ?></label>
                         <br />
                         <label>
-                        <input type="radio" name="questao4" value="b" /> B) <?= $questionarios['b4'] ?>;</label>
+                        <input type="radio" name="questao4" value="b" /> B) <?= $questionarios['b4'] ?></label>
                         <br />
                         <label>
-                        <input type="radio" name="questao4" value="c" /> C) <?= $questionarios['c4'] ?>;</label>
+                        <input type="radio" name="questao4" value="c" /> C) <?= $questionarios['c4'] ?></label>
                         <br />
                         <label>
-                        <input type="radio" name="questao4" value="d" /> D) <?= $questionarios['d4'] ?>.</label>
+                        <input type="radio" name="questao4" value="d" /> D) <?= $questionarios['d4'] ?></label>
 
                         <input type="text" class="form-control" hidden  name="resp4" value="<?= $questionarios['resp4'] ?>">
                     <br />

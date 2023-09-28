@@ -1,4 +1,5 @@
 <?php
+    error_reporting(0);
     
         
     if(@$_SESSION['alert'] != null){
@@ -32,7 +33,6 @@
             if($checkSemana['semana'] >= $semanas['semana']){
        ?>
                 <a href="?secoes=semana&IdSemana=<?= $semanas['id'] ?>" style="text-decoration: none; color: black;">
-                    <h3><?= $semanas['id_curso'] ?></h3>
                     <h1><?= $semanas['nomeMateria'] ?></h1>
                 </a>
         <?php
@@ -40,9 +40,8 @@
         ?>
 
                 <a href="#" style="text-decoration: none; color: black;">
-                    <h3><?= $semanas['id_curso'] ?></h3>
                     <h1><?= $semanas['nomeMateria'] ?></h1>
-                    <h3>complete as etapas anteriores do curso</h3>
+                    <h3 style="color: gray;">complete as etapas anteriores do curso</h3>
                 </a>
 
         <?php
