@@ -13,8 +13,8 @@
                             $manipula = new manipuladados;
                             $usuario = $manipula->getUsuarioByEmail($_COOKIE['email'])[0]['nome_completo'];
 
-                            $curso = $manipula->getCursos($id_curso)[0]['titulo'];
-                            $horas = $manipula->getCursos($id_curso)[0]['horas'];
+                            $curso = utf8_decode($manipula->getCursos($id_curso)[0]['titulo']);
+                            $horas = utf8_decode($manipula->getCursos($id_curso)[0]['horas']);
 
                             require "../../fpdf185/fpdf.php";
                             $pdf = new FPDF("L","pt","A4");
@@ -40,7 +40,7 @@
                             $Concluiu = utf8_decode("Concluiu o curso de");
                             $pdf->Cell(340,7,$Concluiu,0,0,"C");
                             $pdf->SetFont("Arial", "", 20);
-                            $pdf->Cell(110,7,$curso,0,0,"C");
+                            $pdf->Cell(230,7,$curso,0,0,"C");
                             $pdf->Ln(34);
 
                             $CargaHoraria = utf8_decode("com carga horária de ");

@@ -17,9 +17,6 @@ $manipula = new manipuladados();
         <li class="nav-item">
             <a class="nav-link active" aria-current="page" href="#pdf">PDfs Salvos</a>
         </li>
-        <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="#jogos">Jogos Salvos</a>
-        </li>
     </ul>
 
    
